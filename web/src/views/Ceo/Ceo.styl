@@ -1,0 +1,57 @@
+// Privacidade
+
+article#ceo
+    padding 80px 20px;
+    h2
+        max-width 270px; color #fff; font-weight $font-light; font-size rem(29); line-height rem(38);
+        text-transform uppercase; margin-bottom 20px; padding-left 30px; position relative 
+        &:before
+            content ''; background $laranja; height 65%; left 0; bottom 0; position absolute; width 2px;
+        span
+            color $laranja
+    p
+        color #fff; font-size rem(16); line-height rem(24); font-weight $font-light;
+        >>> strong
+            font-size rem(18); font-weight $font-regular;
+    .colunas
+        display flex; height 100%; width 100%;
+        ._01
+            width 25%; flex-shrink 0; flex-grow 0; margin-right 20px
+            .img
+                position relative;
+                p
+                    position absolute; bottom 20px; color #fff; font-size rem(24); padding 0 0 20px 20px
+                    &:before
+                        content ''; width 110%; background $laranja; height 2px; position absolute; left 0; bottom 0
+        ._02
+            width 70%; flex-shrink 0; flex-grow 0;
+            div
+                padding 0 20px 0 0 
+
++desktop-1024()
+    article#ceo
+        .colunas
+            flex-flow row wrap; justify-content center;
+            ._01
+                order 2; width 350px
+            ._02
+                order 1; width 100%; margin-bottom 20px
+                div
+                    padding 0 0 0 0 
+
++tablet-1024()
+    article#ceo
+        padding 40px; height auto !important;
+        .colunas
+            flex-flow row wrap; justify-content center;
+            ._01
+                order 2; max-width 350px; width 100%; padding 0; margin 0;
+            ._02
+                order 1; width 100%; margin-bottom 20px
+                div
+                    padding 0 0 0 0 
+
+
++mobile-600()
+    article#ceo
+        padding 20px

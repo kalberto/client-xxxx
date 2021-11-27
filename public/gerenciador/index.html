@@ -1,0 +1,108 @@
+<html ng-app="painel-inteligencia">
+<head>
+    <base href="https://www.xxxx.com/gerenciador/">
+    <meta charset="utf-8">
+
+    <title ng-bind="$title ? $title + ' - Gerenciador' : '' "></title>
+
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+    <!-- build:css assets/css/vendor.css -->
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+    <link href="node_modules/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+    <link href="node_modules/angular-material-expansion-panel/dist/md-expansion-panel.min.css" rel="stylesheet" type="text/css"/>
+    <!-- endbuild -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Fonts (Google Fonts/Typekit) -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500' rel='stylesheet' type='text/css'>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+    <div ui-view autoscroll="true"></div>
+
+    <!-- build:js vendor.js -->
+            <script src="node_modules/moment/moment.js"></script>
+            <script src="node_modules/moment/locale/pt-br.js"></script>
+            <script src="node_modules/lodash/lodash.min.js"></script>
+            <script src="node_modules/angular/angular.js"></script>
+            <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+            <script src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+            <script src="node_modules/angular-ui-router-title/angular-ui-router-title.js"></script>
+            <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+            <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+            <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+            <script src="node_modules/angular-material/angular-material.min.js"></script>
+            <script src="node_modules/angular-input-masks/releases/angular-input-masks-standalone.min.js"></script>
+            <script src="node_modules/angular-simple-logger/dist/angular-simple-logger.js"></script>
+            <script src="node_modules/angular-google-maps/dist/angular-google-maps.min.js"></script>
+            <script src="node_modules/angular-youtube-mb/dist/angular-youtube-embed.min.js"></script>
+            <script src="node_modules/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js"></script>
+            <script src="node_modules/tinymce/tinymce.min.js"></script>
+            <script src="node_modules/angular-ui-tinymce/src/tinymce.js"></script>
+            <script src="node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+            <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+            <script src="node_modules/angular-material-expansion-panel/dist/md-expansion-panel.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js app.js -->
+        <script src="app.environment.js"></script>
+        <script src="app.js"></script>
+        <script src="app.config.js"></script>
+        <script src="app.routes.js"></script>
+        <script src="app.interceptor.js"></script>
+    
+
+        <!--<script src="common/filters/data.filter.js"></script>-->
+        <script src="common/services/api.service.js"></script>
+        <script src="common/services/tinymce.service.js"></script>
+        <script src="common/directives/ui-sref-active-if.directive.js"></script>
+
+        <script src="sections/painel.controller.js"></script>
+
+        <script src="sections/administradores/editar-perfil.controller.js"></script>
+        <script src="sections/administradores/editar-administrador.controller.js"></script>
+        <script src="sections/administradores/listagem.controller.js"></script>
+
+        <script src="sections/autenticacao/auth.controller.js"></script>
+        <script src="sections/clientes/lista-clientes.controller.js"></script>
+        <script src="sections/clientes/detalhe-cliente.controller.js"></script>
+        <script src="sections/organizacoes/lista-organizacoes.controller.js"></script>
+        <script src="sections/organizacoes/editar-organizacao.controller.js"></script>
+        <script src="sections/organizacoes/criar-organizacao.controller.js"></script>
+        <script src="sections/servicos/lista-servicos.controller.js"></script>
+        <script src="sections/usuarios/editar-usuario.controller.js"></script>
+        <script src="sections/usuarios/listagem.controller.js"></script>
+
+        <script src="sections/faqs/listagem-faqs.controller.js"></script>
+        <script src="sections/faqs/salvar-faqs.controller.js"></script>
+        <script src="sections/manuais/listagem.controller.js"></script>
+        <script src="sections/manuais/editar-manual.controller.js"></script>
+
+        <script src="sections/configuracoes/lista-configuracoes.controller.js"></script>
+        <script src="sections/dashboard/dashboard.controller.js"></script>
+        <script src="sections/leads/lista-leads.controller.js"></script>
+        <script src="sections/users/lista-users.controller.js"></script>
+
+    <script src="sections/produtos-site/listagem-produtos-site.controller.js"></script>
+    <script src="sections/produtos-site/salvar-produtos-site.controller.js"></script>
+
+    <script src="sections/servicos-site/listagem-servicos-site.controller.js"></script>
+    <script src="sections/servicos-site/salvar-servicos-site.controller.js"></script>
+
+    <script src="sections/videos-site/listagem-videos-site.controller.js"></script>
+    <script src="sections/videos-site/salvar-videos-site.controller.js"></script>
+
+    <script src="sections/paginas-site/listagem-paginas-site.controller.js"></script>
+    <script src="sections/paginas-site/salvar-paginas-site.controller.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

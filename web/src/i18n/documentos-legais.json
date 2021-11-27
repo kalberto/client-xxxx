@@ -1,0 +1,20 @@
+{
+    "pt-br": {
+        "titulos": {
+            "h1": "Documentos Legais",
+            "h2": "Clique no documento desejado e faça download."
+        },
+        "botoes": {
+            "voltar": "Voltar"
+        }
+    },
+    "en-gb": {
+        "titulos": {
+            "h1": "Legal Documents",
+            "h2": "Click the document you want and download."
+        },
+        "botoes": {
+            "voltar": "Back"
+        }
+    }
+}

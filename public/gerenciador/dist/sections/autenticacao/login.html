@@ -1,0 +1,40 @@
+<div class="section-auth" layout="row" flex="100" layout-align="center center" layout-wrap>
+    <md-whiteframe
+        class="md-whiteframe-2dp box-auth"
+        flex-xs="90"
+        flex-sm="50"
+        flex-md="30"
+        flex-lg="25"
+        flex-xl="20"
+        layout-padding
+    >
+
+        <md-content class="form-content">
+            <div class="logo"></div>
+            <form name="vm.formLogin" ng-submit="vm.login()">
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex>
+                        <label>Email</label>
+                        <input type="email" ng-model="vm.auth.email" required>
+                    </md-input-container>
+                </div>
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex>
+                        <label>Senha</label>
+                        <input type="password" ng-model="vm.auth.password" required>
+                    </md-input-container>
+                </div>
+                <section layout="column">
+                    <md-button class="md-raised md-primary" layout-align="end" ng-click="vm.login()">Entrar</md-button>
+                    <!--<md-button ui-sref="auth-recuperar-senha" layout-align="end">Esqueceu a senha?</md-button>-->
+                </section>
+                <button type="submit" style="display:none"></button>
+            </form>
+        </md-content>
+
+        <md-content class="progress-content" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+            <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+        </md-content>
+
+    </md-whiteframe>
+</div>

@@ -1,0 +1,725 @@
+$cinza-1: #fefefe;
+$cinza-2: #e1dfe1;
+$cinza-3: #d1cdce;
+$cinza-4: #808080;
+$preto: #202020;
+$amarelo: #fdcd03;
+$laranja: #e65628;
+$vermelho: #910808;
+
+@function vw($target, $base: 1920) {
+    $vw-context: ($base * 0.01) * 1px;
+    @return ($target/$vw-context) * 1vw;
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    src: url('../fonts/Axiforma/axiforma_light.eot');
+    src: url('../fonts/Axiforma/axiforma_light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Axiforma/axiforma_light.woff2') format('woff2'),
+        url('../fonts/Axiforma/axiforma_light.woff') format('woff'),
+        url('../fonts/Axiforma/axiforma_light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    src: url('../fonts/Axiforma/axiforma_regular.eot');
+    src: url('../fonts/Axiforma/axiforma_regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Axiforma/axiforma_regular.woff2') format('woff2'),
+        url('../fonts/Axiforma/axiforma_regular.woff') format('woff'),
+        url('../fonts/Axiforma/axiforma_regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fastpack-b {
+    background: url(../assets/images/background/produtos/bg_fastpack_b.png), linear-gradient(#fff, #ddd 25%);
+    background-size: 100%;
+    background-position: bottom center, center;
+    background-repeat: no-repeat;
+
+    .wrapper {
+        max-width: vw(1210px);
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    #sectionTopo {
+        border-top: 15px solid $laranja;
+
+        .logo {
+            max-width: vw(260px);
+            margin: 0 auto;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+
+            h1 {
+                color: transparent;
+                height: 1px;
+                line-height: 1px;
+                font: 0/0 a;
+            }
+        }
+
+        h2 {
+            margin-top: 25px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: vw(28px);
+            text-align: center;
+            color: $preto;
+        }
+
+        .introducao {
+            padding: vw(25px) 0;
+            margin-top: 10px;
+            position: relative;
+
+            .circulo {
+                border-radius: 50%;
+                background: $preto;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                flex-flow: row wrap;
+
+                p {
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+
+            .chegou {
+                width: vw(206px);
+                height: vw(206px);
+                align-items: center;
+
+                p {
+                    font-family: 'Axiforma', 'Roboto', sans-serif;
+                    font-size: vw(35px);
+                    font-weight: 300;
+                    text-align: center;
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+
+                &:before,
+                &:after {
+                    content: '';
+                    height: 2px;
+                    background: $preto;
+                    display: block;
+                    position: absolute;
+                }
+
+                &::before {
+                    width: vw(120px);
+                    right: vw(-110px);
+                    transform: rotate(15deg) translateY(vw(30px));
+                }
+
+                &:after {
+                    width: vw(550px);
+                    bottom: vw(-215px);
+                    right: vw(-320px);
+                    transform: rotate(60deg);
+                }
+            }
+
+            .internet-rapida {
+                width: vw(520px);
+                height: vw(520px);
+                align-items: flex-start;
+                padding-top: vw(100px);
+                position: absolute;
+                top: 0;
+                left: vw(260px);
+
+                p {
+                    font-family: 'Axiforma', 'Roboto', sans-serif;
+                    font-size: vw(28px);
+                    font-weight: 300;
+                    text-align: center;
+                    color: #fff;
+                    max-width: vw(350px);
+                }
+
+                a {
+                    display: block;
+                    background: $laranja;
+                    cursor: pointer;
+                    outline: 0;
+                    font-size: vw(24px);
+                    line-height: vw(52px);
+                    padding: vw(7px) vw(30px);
+                    border-radius: 50px;
+                    font-family: 'Axiforma', 'Roboto', sans-serif;
+                    text-transform: uppercase;
+                    color: #fff;
+                    font-weight: 300;
+                    transition: all .2s ease-in-out;
+                    position: absolute;
+                    bottom: vw(70px);
+                    right: 0;
+
+                    span {
+                        color: $amarelo;
+                        margin-left: 5px;
+                        font-size: vw(36px);
+                    }
+
+                    &:hover {
+                        box-shadow: inset -5px 0 50px rgba($preto, .2);
+                    }
+                }
+
+                img {
+                    max-width: vw(579px);
+                    display: block;
+                    position: absolute;
+                    left: vw(-180px);
+                    bottom: vw(-90px);
+                }
+
+                &:before,
+                &:after {
+                    content: '';
+                    height: 2px;
+                    background: $preto;
+                    display: block;
+                    position: absolute;
+                }
+
+                &::before {
+                    width: vw(320px);
+                    right: vw(-300px);
+                    top: vw(230px);
+                    transform: rotate(-10deg);
+                }
+
+                &:after {
+                    width: vw(120px);
+                    top: vw(370px);
+                    right: vw(-80px);
+                    transform: rotate(30deg);
+                }
+            }
+
+            .imagem {
+                width: vw(340px);
+                height: vw(340px);
+                overflow: hidden;
+                position: absolute;
+                left: vw(1060px);
+                top: vw(25px);
+                z-index: 1;
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .tecnologia {
+                width: vw(327px);
+                height: vw(327px);
+                align-items: center;
+                position: absolute;
+                left: vw(820px);
+                top: vw(300px);
+
+                p {
+                    font-family: 'Axiforma', 'Roboto', sans-serif;
+                    font-size: vw(28px);
+                    font-weight: 300;
+                    text-align: center;
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+
+                &:before,
+                &:after {
+                    content: '';
+                    height: 2px;
+                    background: $preto;
+                    display: block;
+                    position: absolute;
+                }
+
+                &:before {
+                    width: vw(70px);
+                    right: 0;
+                    top: vw(40px);
+                    transform: rotate(-45deg);
+                }
+
+                &:after {
+                    width: vw(440px);
+                    bottom: vw(20px);
+                    left: vw(-385px);
+                    transform: rotate(-25deg);
+                }
+            }
+
+            .solucoes {
+                margin-top: vw(420px);
+
+                p {
+                    font-family: 'Axiforma', 'Roboto', sans-serif;
+                    font-size: vw(36px);
+                    font-weight: 300;
+                    margin-left: vw(200px);
+
+                    span {
+                        display: inline-block;
+                        width: vw(120px);
+                        height: vw(120px);
+                        line-height: vw(120px);
+                        font-size: vw(40px);
+                        color: #fff;
+                        text-align: center;
+                        vertical-align: middle
+                    }
+                }
+            }
+        }
+    }
+
+    #sectionBeneficios {
+        padding-top: vw(60px);
+
+        .wrapper {
+            max-width: vw(768px);
+        }
+
+        .lista-beneficios-item {
+            color: $preto;
+            font-family: 'Roboto', sans-serif;
+            font-size: vw(28px);
+            margin-bottom: 15px;
+            background: url(../assets/images/background/produtos/bg_lista_beneficios_check.png) no-repeat left top;
+            background-size: vw(40px);
+            min-height: vw(40px);
+            padding-left: vw(50px);
+        }
+    }
+
+    #sectionContato {
+        padding: vw(100px) 0 vw(170px);
+
+        .formulario {
+            background: rgba(#fff, .8);
+            padding: vw(50px);
+            position: relative;
+
+            h2 {
+                font-family: 'Axiforma', 'Roboto', sans-serif;
+                font-weight: 300;
+                max-width: vw(630px);
+                font-size: vw(38px);
+                line-height: vw(40px);
+                letter-spacing: -1px;
+                margin: 0 auto vw(50px);
+                text-align: center;
+                text-transform: uppercase;
+                color: $preto;
+            }
+
+            .lp_form {
+                display: flex;
+                flex-flow: row wrap;
+                position: relative;
+
+                .input {
+                    margin: 1%;
+                    width: 100%;
+                    position: relative;
+
+                    &._25 {
+                        width: 23%;
+                    }
+
+                    &._50 {
+                        width: 48%;
+                    }
+
+                    &._75 {
+                        width: 73%;
+                    }
+
+                    input,
+                    textarea {
+                        width: 100%;
+                        border: 1px solid #c7c7c7;
+                        padding: 15px;
+                        color: $preto;
+                        font-family: 'Roboto', sans-serif;
+                        font-size: vw(20px);
+
+                        &::placeholder {
+                            color: rgba($preto, .8);
+                        }
+
+                        &.error {
+                            border-color: $vermelho;
+                        }
+                    }
+
+                    textarea {
+                        resize: none;
+                        min-height: 160px;
+                    }
+
+                    .m-error {
+                        position: absolute;
+                        bottom: vw(-12px);
+                        color: $vermelho;
+                        font-size: vw(10px);
+                        display: none;
+
+                        &.ativo {
+                            display: block;
+                        }
+                    }
+                }
+
+                .button {
+                    position: absolute;
+                    bottom: vw(-85px);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: vw(282px);
+
+                    button {
+                        border: none;
+                        background: $laranja;
+                        cursor: pointer;
+                        outline: 0;
+                        font-size: vw(24px);
+                        line-height: vw(52px);
+                        padding: vw(7px) vw(30px);
+                        border-radius: 50px;
+                        font-family: 'Axiforma', 'Roboto', sans-serif;
+                        text-transform: uppercase;
+                        color: #fff;
+                        font-weight: 300;
+                        transition: all .2s ease-in-out;
+                        display: block;
+                        margin: 0 auto;
+
+                        span {
+                            color: $amarelo;
+                            margin-left: 5px;
+                            font-size: vw(36px);
+                        }
+
+                        &:hover:not([disabled]) {
+                            box-shadow: inset -5px 0 50px rgba($preto, .2);
+                        }
+
+                        &[disabled] {
+                            opacity: .8;
+                            cursor: default;
+                        }
+                    }
+                }
+
+                &:after {
+                    content: attr(data-success);
+                    display: flex;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0;
+                    background: rgba(#fff, .75);
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 25px;
+                    color: $laranja;
+                    text-transform: uppercase;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .2s ease-in-out;
+                }
+
+                &.success {
+                    .input {
+
+                        input,
+                        textarea {
+                            user-select: none;
+                        }
+                    }
+
+                    &:after {
+                        opacity: 1;
+                        visibility: visible;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .wrapper {
+            max-width: 1210px;
+        }
+
+        #sectionTopo {
+            overflow: hidden;
+
+            .logo {
+                max-width: vw(260px, 768);
+            }
+
+            h2 {
+                font-size: vw(28px, 768);
+            }
+
+            .introducao {
+                padding: vw(25px) 0;
+
+                .chegou {
+                    width: vw(206px, 768);
+                    height: vw(206px, 768);
+
+                    p {
+                        font-size: vw(35px, 768);
+                    }
+
+                    &::before {
+                        width: vw(120px, 768);
+                        right: vw(-110px, 768);
+                        transform: rotate(25deg) translateY(vw(30px, 768));
+                    }
+
+                    &:after {
+                        width: vw(980px, 768);
+                        bottom: vw(-470px, 768);
+                        right: vw(-420px, 768);
+                        transform: rotate(85deg);
+                    }
+                }
+
+                .internet-rapida {
+                    width: vw(520px, 768);
+                    height: vw(520px, 768);
+                    padding-top: vw(100px, 768);
+                    left: vw(180px, 768);
+                    top: vw(75px, 768);
+
+                    p {
+                        font-size: vw(28px, 768);
+                        max-width: vw(350px, 768);
+                    }
+
+                    a {
+                        font-size: vw(24px, 768);
+                        line-height: vw(52px, 768);
+                        padding: vw(7px) vw(30px, 768);
+                        bottom: vw(70px, 768);
+
+                        span {
+                            font-size: vw(36px, 768);
+                        }
+                    }
+
+                    img {
+                        max-width: vw(579px, 768);
+                        left: vw(-180px, 768);
+                        bottom: vw(-90px, 768);
+                        z-index: 1;
+                    }
+
+                    &::before {
+                        width: vw(140px, 768);
+                        right: vw(40px, 768);
+                        bottom: vw(-10px, 768);
+                        transform: rotate(60deg);
+                        top: auto;
+                    }
+
+                    &:after {
+                        width: vw(250px, 768);
+                        bottom: vw(-100px, 768);
+                        right: vw(170px, 768);
+                        transform: rotate(100deg);
+                        top: auto;
+                    }
+                }
+
+                .imagem {
+                    width: vw(340px, 768);
+                    height: vw(340px, 768);
+                    left: vw(525px, 768);
+                    top: vw(630px, 768);
+
+                    img {
+                        transform: scale(-1, 1)
+                    }
+                }
+
+                .tecnologia {
+                    width: vw(327px, 768);
+                    height: vw(327px, 768);
+                    left: vw(185px, 768);
+                    top: vw(785px, 768);
+
+                    p {
+                        font-size: vw(28px, 768);
+                    }
+
+                    &:before {
+                        width: vw(70px, 768);
+                        top: vw(100px, 768);
+                        right: vw(-45px, 768);
+                        transform: rotate(-30deg);
+                    }
+
+                    &:after {
+                        width: vw(132px, 768);
+                        bottom: vw(-15px, 768);
+                        left: vw(-10px, 768);
+                        transform: rotate(-50deg);
+                    }
+                }
+
+                .solucoes {
+                    margin-top: vw(935px, 768);
+
+                    p {
+                        font-size: vw(30px, 768);
+                        margin-left: 0;
+
+                        span {
+                            width: vw(120px, 768);
+                            height: vw(120px, 768);
+                            line-height: vw(120px, 768);
+                            font-size: vw(40px, 768);
+                        }
+                    }
+                }
+            }
+        }
+
+        #sectionBeneficios {
+            padding-top: vw(60px, 768);
+
+            .wrapper {
+                max-width: vw(768px, 768);
+            }
+
+            .lista-beneficios-item {
+                font-size: vw(28px, 768);
+                background-size: vw(40px, 768);
+                min-height: vw(40px, 768);
+                padding-left: vw(50px, 768);
+            }
+        }
+
+        #sectionContato {
+            padding: vw(100px, 768) 0 vw(170px, 768);
+
+            .formulario {
+                padding: vw(50px, 768);
+
+                h2 {
+                    max-width: vw(630px, 768);
+                    font-size: vw(38px, 768);
+                    line-height: vw(40px, 768);
+                    margin: 0 auto vw(50px, 768);
+                }
+
+                .lp_form {
+                    .input {
+                        &._25 {
+                            width: 48%;
+                        }
+
+                        &._50 {
+                            width: 100%;
+                        }
+
+                        &._75 {
+                            width: 100%;
+                        }
+
+                        input,
+                        textarea {
+                            font-size: vw(20px, 768);
+                        }
+
+                        .m-error {
+                            bottom: vw(-12px, 768);
+                            font-size: vw(10px, 768);
+                        }
+                    }
+
+                    .button {
+                        bottom: vw(-85px, 768);
+                        width: vw(282px, 768);
+
+                        button {
+                            font-size: vw(24px, 768);
+                            line-height: vw(52px, 768);
+                            padding: vw(7px, 768) vw(30px, 768);
+
+                            span {
+                                font-size: vw(36px, 768);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    @media (max-width: 600px) {
+        #sectionContato {
+            padding: vw(100px, 600) 0 vw(170px, 600);
+
+            .formulario {
+                padding: vw(50px, 600);
+
+                h2 {
+                    max-width: vw(630px, 600);
+                    font-size: vw(38px, 600);
+                    line-height: vw(40px, 600);
+                    margin: 0 auto vw(50px, 600);
+                }
+
+                .lp_form {
+                    .input {
+                        &._25 {
+                            width: 100%;
+                        }
+
+                        input,
+                        textarea {
+                            font-size: vw(20px, 600);
+                        }
+
+                        .m-error {
+                            bottom: vw(-12px, 600);
+                            font-size: vw(10px, 600);
+                        }
+                    }
+
+                    .button {
+                        width: 222px;
+                    }
+                }
+            }
+        }
+    }
+}

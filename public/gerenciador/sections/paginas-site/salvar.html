@@ -1,0 +1,72 @@
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Página Site</span>
+            </h2>
+        </div>
+    </md-toolbar>
+	<form>
+		<md-content class="md-padding md-whiteframe-1dp">
+			<md-list ng-cloak="">
+				<md-subheader class="md-no-sticky">Conteúdo</md-subheader>
+				<md-tabs class="md-primary" md-dynamic-height md-selected="vm.selectedTab">
+					<md-tab ng-repeat="item in vm.languages" label="{{item.locale}}" >
+						<md-input-container class="md-block" flex=100 flex-gt-xs=100>
+							<label>Vídeo Institucional</label>
+							<md-select ng-model="vm.registro.video_id">
+								<md-option ng-repeat="video in vm.videos[item.locale]" ng-value="video.id">{{video.title}}</md-option>
+							</md-select>
+						</md-input-container>
+						<md-input-container class="md-block" flex=100 flex-gt-xs=100>
+							<label>Vídeos</label>
+							<md-select multiple ng-model="vm.registro.videos">
+								<md-option ng-repeat="video in vm.videos[item.locale]" ng-value="video.id">{{video.title}}</md-option>
+							</md-select>
+						</md-input-container>
+						<div layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Título</label>
+								<input ng-model="vm.registro.languages[item.locale].title" type="text">
+							</md-input-container>
+						</div>
+						<div layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Sub Título</label>
+								<input ng-model="vm.registro.languages[item.locale].sub_title" type="text">
+							</md-input-container>
+						</div>
+						<div layout="row" layout-wrap>
+							<div flex=100 flex-gt-sm=100>
+								<label>Texto 1</label><br/><br/>
+								<textarea ui-tinymce="vm.tynconf" ng-model="vm.registro.languages[item.locale].text_1"></textarea>
+								<br/><br/>
+							</div>
+						</div>
+						<div layout="row" layout-wrap>
+							<div flex=100 flex-gt-sm=100>
+								<label>Texto 2</label><br/><br/>
+								<textarea ui-tinymce="vm.tynconf" ng-model="vm.registro.languages[item.locale].text_2"></textarea>
+								<br/><br/>
+							</div>
+						</div>
+					</md-tab>
+				</md-tabs>
+			</md-list>
+			<md-toolbar>
+				<div class="md-toolbar-tools" style="background: #FCFCFC; border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+					<div layout="row">
+						<md-button class="md-raised" aria-label="Cancelar" ui-sref="painel.produtos-site.listar">
+							Cancelar
+						</md-button>
+						<md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.salvar($event)">
+							Salvar
+						</md-button>
+					</div>
+				</div>
+			</md-toolbar>
+
+			<md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+				<md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+			</md-content>
+		</md-content>
+	</form>

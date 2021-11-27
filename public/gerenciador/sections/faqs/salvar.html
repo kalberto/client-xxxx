@@ -1,0 +1,53 @@
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>FAQ</span>
+            </h2>
+        </div>
+    </md-toolbar>
+
+    <md-content class="md-padding md-whiteframe-1dp">
+        <md-list ng-cloak="">
+            <form>
+                <md-subheader class="md-no-sticky">Conteúdo</md-subheader>
+                <md-list-item>
+                    <div flex=100 flex-gt-sm=100>
+                        <div layout="row" layout-wrap>
+                            <md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+                                <label>Pergunta</label>
+                                <input ng-model="vm.faq.pergunta" type="text">
+                            </md-input-container>
+                        </div>
+                        <div layout="row" layout-wrap>
+                            <div flex=100 flex-gt-sm=100>
+                                <label>Conteúdo</label><br/><br/>
+                                <textarea ui-tinymce="vm.tynconf" ng-model="vm.faq.resposta"></textarea>
+                                <br/><br/>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </md-list-item>
+
+            </form>
+        </md-list>
+                    
+                
+        <md-toolbar>
+        <div class="md-toolbar-tools" style="background: #FCFCFC; border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+            <div layout="row">
+                <md-button class="md-raised" aria-label="Cancelar" ui-sref="painel.faqs.listar">
+                    Cancelar
+                </md-button>
+                <md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.salvar()">
+                    Salvar
+                </md-button>
+            </div>
+        </div>
+        </md-toolbar>
+
+        <md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+            <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+        </md-content>
+    </md-content>

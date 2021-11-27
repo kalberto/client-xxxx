@@ -1,0 +1,707 @@
+@font-face {
+  font-family: 'Axiforma';
+  src: url("../fonts/Axiforma/axiforma_light.eot");
+  src: url("../fonts/Axiforma/axiforma_light.eot?#iefix") format("embedded-opentype"), url("../fonts/Axiforma/axiforma_light.woff2") format("woff2"), url("../fonts/Axiforma/axiforma_light.woff") format("woff"), url("../fonts/Axiforma/axiforma_light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url("../fonts/Axiforma/axiforma_regular.eot");
+  src: url("../fonts/Axiforma/axiforma_regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Axiforma/axiforma_regular.woff2") format("woff2"), url("../fonts/Axiforma/axiforma_regular.woff") format("woff"), url("../fonts/Axiforma/axiforma_regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fastpack-b {
+  background: url(../assets/images/background/produtos/bg_fastpack_b.png), -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(25%, #ddd));
+  background: url(../assets/images/background/produtos/bg_fastpack_b.png), linear-gradient(#fff, #ddd 25%);
+  background-size: 100%;
+  background-position: bottom center, center;
+  background-repeat: no-repeat;
+}
+
+.fastpack-b .wrapper {
+  max-width: 63.02083333vw;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.fastpack-b #sectionTopo {
+  border-top: 15px solid #e65628;
+}
+
+.fastpack-b #sectionTopo .logo {
+  max-width: 13.54166667vw;
+  margin: 0 auto;
+}
+
+.fastpack-b #sectionTopo .logo img {
+  display: block;
+  width: 100%;
+}
+
+.fastpack-b #sectionTopo .logo h1 {
+  color: transparent;
+  height: 1px;
+  line-height: 1px;
+  font: 0/0 a;
+}
+
+.fastpack-b #sectionTopo h2 {
+  margin-top: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.45833333vw;
+  text-align: center;
+  color: #202020;
+}
+
+.fastpack-b #sectionTopo .introducao {
+  padding: 1.30208333vw 0;
+  margin-top: 10px;
+  position: relative;
+}
+
+.fastpack-b #sectionTopo .introducao .circulo {
+  border-radius: 50%;
+  background: #202020;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.fastpack-b #sectionTopo .introducao .circulo p {
+  position: relative;
+  z-index: 1;
+}
+
+.fastpack-b #sectionTopo .introducao .chegou {
+  width: 10.72916667vw;
+  height: 10.72916667vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fastpack-b #sectionTopo .introducao .chegou p {
+  font-family: 'Axiforma', 'Roboto', sans-serif;
+  font-size: 1.82291667vw;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.fastpack-b #sectionTopo .introducao .chegou:before, .fastpack-b #sectionTopo .introducao .chegou:after {
+  content: '';
+  height: 2px;
+  background: #202020;
+  display: block;
+  position: absolute;
+}
+
+.fastpack-b #sectionTopo .introducao .chegou::before {
+  width: 6.25vw;
+  right: -5.72916667vw;
+  -webkit-transform: rotate(15deg) translateY(1.5625vw);
+          transform: rotate(15deg) translateY(1.5625vw);
+}
+
+.fastpack-b #sectionTopo .introducao .chegou:after {
+  width: 28.64583333vw;
+  bottom: -11.19791667vw;
+  right: -16.66666667vw;
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.fastpack-b #sectionTopo .introducao .internet-rapida {
+  width: 27.08333333vw;
+  height: 27.08333333vw;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 5.20833333vw;
+  position: absolute;
+  top: 0;
+  left: 13.54166667vw;
+}
+
+.fastpack-b #sectionTopo .introducao .internet-rapida p {
+  font-family: 'Axiforma', 'Roboto', sans-serif;
+  font-size: 1.45833333vw;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  max-width: 18.22916667vw;
+}
+
+.fastpack-b #sectionTopo .introducao .internet-rapida a {
+  display: block;
+  background: #e65628;
+  cursor: pointer;
+  outline: 0;
+  font-size: 1.25vw;
+  line-height: 2.70833333vw;
+  padding: 0.36458333vw 1.5625vw;
+  border-radius: 50px;
+  font-family: 'Axiforma', 'Roboto', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 300;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  position: absolute;
+  bottom: 3.64583333vw;
+  right: 0;
+}
+
+.fastpack-b #sectionTopo .introducao .internet-rapida a span {
+  color: #fdcd03;
+  margin-left: 5px;
+  font-size: 1.875vw;
+}
+
+.fastpack-b #sectionTopo .introducao .internet-rapida a:hover {
+  -webkit-box-shadow: inset -5px 0 50px rgba(32, 32, 32, 0.2);
+          box-shadow: inset -5px 0 50px rgba(32, 32, 32, 0.2);
+}
+
+.fastpack-b #sectionTopo .introducao .internet-rapida img {
+  max-width: 30.15625vw;
+  display: block;
+  position: absolute;
+  left: -9.375vw;
+  bottom: -4.6875vw;
+}
+
+.fastpack-b #sectionTopo .introducao .internet-rapida:before, .fastpack-b #sectionTopo .introducao .internet-rapida:after {
+  content: '';
+  height: 2px;
+  background: #202020;
+  display: block;
+  position: absolute;
+}
+
+.fastpack-b #sectionTopo .introducao .internet-rapida::before {
+  width: 16.66666667vw;
+  right: -15.625vw;
+  top: 11.97916667vw;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.fastpack-b #sectionTopo .introducao .internet-rapida:after {
+  width: 6.25vw;
+  top: 19.27083333vw;
+  right: -4.16666667vw;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.fastpack-b #sectionTopo .introducao .imagem {
+  width: 17.70833333vw;
+  height: 17.70833333vw;
+  overflow: hidden;
+  position: absolute;
+  left: 55.20833333vw;
+  top: 1.30208333vw;
+  z-index: 1;
+}
+
+.fastpack-b #sectionTopo .introducao .imagem img {
+  display: block;
+  width: 100%;
+}
+
+.fastpack-b #sectionTopo .introducao .tecnologia {
+  width: 17.03125vw;
+  height: 17.03125vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 42.70833333vw;
+  top: 15.625vw;
+}
+
+.fastpack-b #sectionTopo .introducao .tecnologia p {
+  font-family: 'Axiforma', 'Roboto', sans-serif;
+  font-size: 1.45833333vw;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.fastpack-b #sectionTopo .introducao .tecnologia:before, .fastpack-b #sectionTopo .introducao .tecnologia:after {
+  content: '';
+  height: 2px;
+  background: #202020;
+  display: block;
+  position: absolute;
+}
+
+.fastpack-b #sectionTopo .introducao .tecnologia:before {
+  width: 3.64583333vw;
+  right: 0;
+  top: 2.08333333vw;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.fastpack-b #sectionTopo .introducao .tecnologia:after {
+  width: 22.91666667vw;
+  bottom: 1.04166667vw;
+  left: -20.05208333vw;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.fastpack-b #sectionTopo .introducao .solucoes {
+  margin-top: 21.875vw;
+}
+
+.fastpack-b #sectionTopo .introducao .solucoes p {
+  font-family: 'Axiforma', 'Roboto', sans-serif;
+  font-size: 1.875vw;
+  font-weight: 300;
+  margin-left: 10.41666667vw;
+}
+
+.fastpack-b #sectionTopo .introducao .solucoes p span {
+  display: inline-block;
+  width: 6.25vw;
+  height: 6.25vw;
+  line-height: 6.25vw;
+  font-size: 2.08333333vw;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.fastpack-b #sectionBeneficios {
+  padding-top: 3.125vw;
+}
+
+.fastpack-b #sectionBeneficios .wrapper {
+  max-width: 40vw;
+}
+
+.fastpack-b #sectionBeneficios .lista-beneficios-item {
+  color: #202020;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.45833333vw;
+  margin-bottom: 15px;
+  background: url(../assets/images/background/produtos/bg_lista_beneficios_check.png) no-repeat left top;
+  background-size: 2.08333333vw;
+  min-height: 2.08333333vw;
+  padding-left: 2.60416667vw;
+}
+
+.fastpack-b #sectionContato {
+  padding: 5.20833333vw 0 8.85416667vw;
+}
+
+.fastpack-b #sectionContato .formulario {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2.60416667vw;
+  position: relative;
+}
+
+.fastpack-b #sectionContato .formulario h2 {
+  font-family: 'Axiforma', 'Roboto', sans-serif;
+  font-weight: 300;
+  max-width: 32.8125vw;
+  font-size: 1.97916667vw;
+  line-height: 2.08333333vw;
+  letter-spacing: -1px;
+  margin: 0 auto 2.60416667vw;
+  text-align: center;
+  text-transform: uppercase;
+  color: #202020;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input {
+  margin: 1%;
+  width: 100%;
+  position: relative;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input._25 {
+  width: 23%;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input._50 {
+  width: 48%;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input._75 {
+  width: 73%;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input input,
+.fastpack-b #sectionContato .formulario .lp_form .input textarea {
+  width: 100%;
+  border: 1px solid #c7c7c7;
+  padding: 15px;
+  color: #202020;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.04166667vw;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input input::-webkit-input-placeholder,
+.fastpack-b #sectionContato .formulario .lp_form .input textarea::-webkit-input-placeholder {
+  color: rgba(32, 32, 32, 0.8);
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input input:-ms-input-placeholder,
+.fastpack-b #sectionContato .formulario .lp_form .input textarea:-ms-input-placeholder {
+  color: rgba(32, 32, 32, 0.8);
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input input::-ms-input-placeholder,
+.fastpack-b #sectionContato .formulario .lp_form .input textarea::-ms-input-placeholder {
+  color: rgba(32, 32, 32, 0.8);
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input input::placeholder,
+.fastpack-b #sectionContato .formulario .lp_form .input textarea::placeholder {
+  color: rgba(32, 32, 32, 0.8);
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input input.error,
+.fastpack-b #sectionContato .formulario .lp_form .input textarea.error {
+  border-color: #910808;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input textarea {
+  resize: none;
+  min-height: 160px;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input .m-error {
+  position: absolute;
+  bottom: -0.625vw;
+  color: #910808;
+  font-size: 0.52083333vw;
+  display: none;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .input .m-error.ativo {
+  display: block;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .button {
+  position: absolute;
+  bottom: -4.42708333vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 14.6875vw;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .button button {
+  border: none;
+  background: #e65628;
+  cursor: pointer;
+  outline: 0;
+  font-size: 1.25vw;
+  line-height: 2.70833333vw;
+  padding: 0.36458333vw 1.5625vw;
+  border-radius: 50px;
+  font-family: 'Axiforma', 'Roboto', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 300;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .button button span {
+  color: #fdcd03;
+  margin-left: 5px;
+  font-size: 1.875vw;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .button button:hover:not([disabled]) {
+  -webkit-box-shadow: inset -5px 0 50px rgba(32, 32, 32, 0.2);
+          box-shadow: inset -5px 0 50px rgba(32, 32, 32, 0.2);
+}
+
+.fastpack-b #sectionContato .formulario .lp_form .button button[disabled] {
+  opacity: .8;
+  cursor: default;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form:after {
+  content: attr(data-success);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+  color: #e65628;
+  text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form.success .input input,
+.fastpack-b #sectionContato .formulario .lp_form.success .input textarea {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.fastpack-b #sectionContato .formulario .lp_form.success:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .fastpack-b .wrapper {
+    max-width: 1210px;
+  }
+  .fastpack-b #sectionTopo {
+    overflow: hidden;
+  }
+  .fastpack-b #sectionTopo .logo {
+    max-width: 33.85416667vw;
+  }
+  .fastpack-b #sectionTopo h2 {
+    font-size: 3.64583333vw;
+  }
+  .fastpack-b #sectionTopo .introducao {
+    padding: 1.30208333vw 0;
+  }
+  .fastpack-b #sectionTopo .introducao .chegou {
+    width: 26.82291667vw;
+    height: 26.82291667vw;
+  }
+  .fastpack-b #sectionTopo .introducao .chegou p {
+    font-size: 4.55729167vw;
+  }
+  .fastpack-b #sectionTopo .introducao .chegou::before {
+    width: 15.625vw;
+    right: -14.32291667vw;
+    -webkit-transform: rotate(25deg) translateY(3.90625vw);
+            transform: rotate(25deg) translateY(3.90625vw);
+  }
+  .fastpack-b #sectionTopo .introducao .chegou:after {
+    width: 127.60416667vw;
+    bottom: -61.19791667vw;
+    right: -54.6875vw;
+    -webkit-transform: rotate(85deg);
+            transform: rotate(85deg);
+  }
+  .fastpack-b #sectionTopo .introducao .internet-rapida {
+    width: 67.70833333vw;
+    height: 67.70833333vw;
+    padding-top: 13.02083333vw;
+    left: 23.4375vw;
+    top: 9.765625vw;
+  }
+  .fastpack-b #sectionTopo .introducao .internet-rapida p {
+    font-size: 3.64583333vw;
+    max-width: 45.57291667vw;
+  }
+  .fastpack-b #sectionTopo .introducao .internet-rapida a {
+    font-size: 3.125vw;
+    line-height: 6.77083333vw;
+    padding: 0.36458333vw 3.90625vw;
+    bottom: 9.11458333vw;
+  }
+  .fastpack-b #sectionTopo .introducao .internet-rapida a span {
+    font-size: 4.6875vw;
+  }
+  .fastpack-b #sectionTopo .introducao .internet-rapida img {
+    max-width: 75.390625vw;
+    left: -23.4375vw;
+    bottom: -11.71875vw;
+    z-index: 1;
+  }
+  .fastpack-b #sectionTopo .introducao .internet-rapida::before {
+    width: 18.22916667vw;
+    right: 5.20833333vw;
+    bottom: -1.30208333vw;
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+    top: auto;
+  }
+  .fastpack-b #sectionTopo .introducao .internet-rapida:after {
+    width: 32.55208333vw;
+    bottom: -13.02083333vw;
+    right: 22.13541667vw;
+    -webkit-transform: rotate(100deg);
+            transform: rotate(100deg);
+    top: auto;
+  }
+  .fastpack-b #sectionTopo .introducao .imagem {
+    width: 44.27083333vw;
+    height: 44.27083333vw;
+    left: 68.359375vw;
+    top: 82.03125vw;
+  }
+  .fastpack-b #sectionTopo .introducao .imagem img {
+    -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+  }
+  .fastpack-b #sectionTopo .introducao .tecnologia {
+    width: 42.578125vw;
+    height: 42.578125vw;
+    left: 24.08854167vw;
+    top: 102.21354167vw;
+  }
+  .fastpack-b #sectionTopo .introducao .tecnologia p {
+    font-size: 3.64583333vw;
+  }
+  .fastpack-b #sectionTopo .introducao .tecnologia:before {
+    width: 9.11458333vw;
+    top: 13.02083333vw;
+    right: -5.859375vw;
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  .fastpack-b #sectionTopo .introducao .tecnologia:after {
+    width: 17.1875vw;
+    bottom: -1.953125vw;
+    left: -1.30208333vw;
+    -webkit-transform: rotate(-50deg);
+            transform: rotate(-50deg);
+  }
+  .fastpack-b #sectionTopo .introducao .solucoes {
+    margin-top: 121.74479167vw;
+  }
+  .fastpack-b #sectionTopo .introducao .solucoes p {
+    font-size: 3.90625vw;
+    margin-left: 0;
+  }
+  .fastpack-b #sectionTopo .introducao .solucoes p span {
+    width: 15.625vw;
+    height: 15.625vw;
+    line-height: 15.625vw;
+    font-size: 5.20833333vw;
+  }
+  .fastpack-b #sectionBeneficios {
+    padding-top: 7.8125vw;
+  }
+  .fastpack-b #sectionBeneficios .wrapper {
+    max-width: 100vw;
+  }
+  .fastpack-b #sectionBeneficios .lista-beneficios-item {
+    font-size: 3.64583333vw;
+    background-size: 5.20833333vw;
+    min-height: 5.20833333vw;
+    padding-left: 6.51041667vw;
+  }
+  .fastpack-b #sectionContato {
+    padding: 13.02083333vw 0 22.13541667vw;
+  }
+  .fastpack-b #sectionContato .formulario {
+    padding: 6.51041667vw;
+  }
+  .fastpack-b #sectionContato .formulario h2 {
+    max-width: 82.03125vw;
+    font-size: 4.94791667vw;
+    line-height: 5.20833333vw;
+    margin: 0 auto 6.51041667vw;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .input._25 {
+    width: 48%;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .input._50 {
+    width: 100%;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .input._75 {
+    width: 100%;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .input input,
+  .fastpack-b #sectionContato .formulario .lp_form .input textarea {
+    font-size: 2.60416667vw;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .input .m-error {
+    bottom: -1.5625vw;
+    font-size: 1.30208333vw;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .button {
+    bottom: -11.06770833vw;
+    width: 36.71875vw;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .button button {
+    font-size: 3.125vw;
+    line-height: 6.77083333vw;
+    padding: 0.91145833vw 3.90625vw;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .button button span {
+    font-size: 4.6875vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .fastpack-b #sectionContato {
+    padding: 16.66666667vw 0 28.33333333vw;
+  }
+  .fastpack-b #sectionContato .formulario {
+    padding: 8.33333333vw;
+  }
+  .fastpack-b #sectionContato .formulario h2 {
+    max-width: 105vw;
+    font-size: 6.33333333vw;
+    line-height: 6.66666667vw;
+    margin: 0 auto 8.33333333vw;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .input._25 {
+    width: 100%;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .input input,
+  .fastpack-b #sectionContato .formulario .lp_form .input textarea {
+    font-size: 3.33333333vw;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .input .m-error {
+    bottom: -2vw;
+    font-size: 1.66666667vw;
+  }
+  .fastpack-b #sectionContato .formulario .lp_form .button {
+    width: 222px;
+  }
+}

@@ -1,0 +1,273 @@
+.conteudo-comparativoFastpack {
+  position: relative;
+  margin-top: -231px;
+  padding-bottom: 90px;
+}
+
+.conteudo-comparativoFastpack .saibaMaisComparativo {
+  margin: 0 15px 0 30px;
+  text-transform: uppercase;
+}
+
+.conteudo-comparativoFastpack .saibaMaisComparativo div {
+  width: 200px;
+  padding: 7px 20px;
+  text-align: center;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack {
+  background: transparent;
+  margin-bottom: 15px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr:not(:first-child):not(:last-child) {
+  border-bottom: 2px solid #dddddd;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.border {
+  border-bottom: 2px solid #dddddd;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr.maior td,
+.conteudo-comparativoFastpack .comparativoFastpack tr.maior th {
+  font-size: 20px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr.maior td strong,
+.conteudo-comparativoFastpack .comparativoFastpack tr.maior th strong {
+  font-size: 20px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td,
+.conteudo-comparativoFastpack .comparativoFastpack tr th {
+  font-size: 16px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td strong,
+.conteudo-comparativoFastpack .comparativoFastpack tr th strong {
+  font-size: 16px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td img,
+.conteudo-comparativoFastpack .comparativoFastpack tr th img {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td .logo,
+.conteudo-comparativoFastpack .comparativoFastpack tr th .logo {
+  width: 180px;
+  display: block;
+  margin: 0 auto;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.textLeft,
+.conteudo-comparativoFastpack .comparativoFastpack tr th.textLeft {
+  text-align: left;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th {
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+  font-weight: 400;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th strong {
+  color: #000000;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao1 {
+  background: #fff;
+  height: 114px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao2 {
+  background: #ecf0f1;
+  height: 114px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao3 {
+  background: #f5f7f8;
+  height: 91px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao4 {
+  background: #e3e9ea;
+  height: 91px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao5 {
+  background: #e3e9ea;
+  height: 91px;
+  width: 300px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao6 {
+  background: #e3e9ea;
+  height: 91px;
+  width: 167px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao7 {
+  background: #ecf0f1;
+  height: 91px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao8 {
+  background: #fff;
+  height: 91px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao9 {
+  background: #ecf0f1;
+  height: 114px;
+  width: 465px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr th.variacao10 {
+  background: #e3e9ea;
+  height: 91px;
+  width: 167px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td {
+  text-align: center;
+  color: #000000;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao1 {
+  background: #fff;
+  height: 114px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao2 {
+  background: #ecf0f1;
+  height: 114px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao3 {
+  background: #f5f7f8;
+  height: 91px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao4 {
+  background: #e3e9ea;
+  height: 91px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao5 {
+  background: #e3e9ea;
+  height: 91px;
+  width: 300px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao6 {
+  background: #e3e9ea;
+  height: 91px;
+  width: 167px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao7 {
+  background: #ecf0f1;
+  height: 91px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao8 {
+  background: #fff;
+  height: 91px;
+  width: 331px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao9 {
+  background: #ecf0f1;
+  height: 114px;
+  width: 465px;
+}
+
+.conteudo-comparativoFastpack .comparativoFastpack tr td.variacao10 {
+  background: #ecf0f1;
+  height: 91px;
+  width: 167px;
+}
+
+@media screen and (max-width: 768px) {
+  .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) td,
+  .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) th {
+    width: 33% !important;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack tr td .logo {
+    width: auto;
+    max-width: 180px;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack .pacoteComparativo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .conteudo-comparativoFastpack .saibaMaisComparativo {
+    margin-bottom: 10px;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) td,
+  .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) th {
+    width: 50% !important;
+    height: auto !important;
+    vertical-align: top;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) td:first-child,
+  .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) th:first-child {
+    display: none;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) td:nth-last-child(2), .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) td:last-child,
+  .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) th:nth-last-child(2),
+  .conteudo-comparativoFastpack .comparativoFastpack tr:nth-child(n + 3) th:last-child {
+    padding: 40px 5px 10px;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack tr td,
+  .conteudo-comparativoFastpack .comparativoFastpack tr th {
+    padding: 0 5px;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack tr td.variacao3,
+  .conteudo-comparativoFastpack .comparativoFastpack tr th.variacao3 {
+    background: #fff;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack tr td.variacao4,
+  .conteudo-comparativoFastpack .comparativoFastpack tr th.variacao4 {
+    background: #ecf0f1;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack tr td[data-caption],
+  .conteudo-comparativoFastpack .comparativoFastpack tr th[data-caption] {
+    position: relative;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack tr td[data-caption]:before,
+  .conteudo-comparativoFastpack .comparativoFastpack tr th[data-caption]:before {
+    content: attr(data-caption);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    display: block;
+    width: calc(200% - 1px);
+    background: #e3e9ea;
+    line-height: 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .conteudo-comparativoFastpack .comparativoFastpack .pacoteComparativo + td,
+  .conteudo-comparativoFastpack .comparativoFastpack .pacoteComparativo + th {
+    display: none;
+  }
+}

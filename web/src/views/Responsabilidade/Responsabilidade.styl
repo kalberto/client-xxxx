@@ -1,0 +1,123 @@
+// Institucional
+
+article#responsabilidade
+    .container
+        display flex; height 100%;
+        .left
+            display flex; flex-direction column; justify-content center; align-items center;
+            .img
+                max-width 25em; width 100%; padding 30px
+                img
+                    width 100%;
+            .assista
+                position relative;
+                button
+                    position relative; padding-bottom 60px; cursor pointer; font-size rem(18)
+                    img
+                        display inline-block; margin-right 8px;
+                    &:before
+                        content ''; background $laranja; height 50px; width 2px; position absolute; bottom 0; left 50%; transform translateX(-50%);
+                h3
+                    position absolute; left 110%; font-size rem(105); font-weight $font-light; text-transform uppercase;
+                    letter-spacing letterSpacing(350); color $preto; opacity .1; pointer-events none; user-select none;
+                    top 50%; transform translateY(-50%); mask-image radial-gradient(circle, rgba(#000, .3) 70%, rgba(#000, 0));
+        .center
+            max-width 600px; width 100%; padding-top 20px
+            h2
+                max-width 420px; padding-left 35px; font-weight $font-regular; border-left 2px solid $laranja; margin-bottom 45px
+                span
+                    color $laranja; text-transform uppercase;
+
+            p
+                font-size rem(14); line-height rem(24); margin-bottom 30px; padding 0 35px;
+
+            .logo
+                display flex; align-items center;
+                .img
+                    height 175px; flex-shrink 0; padding 0 35px;
+                    img
+                        height 100%;
+                p
+                    font-size rem(14); line-height rem(24); border-left 2px solid $laranja; padding-left 35px;
+                    margin-bottom 0px
+        .right
+            max-width 550px; width 100%; display flex; flex-direction column; justify-content center; height 100%
+            align-items flex-end
+            img
+                pointer-events none
+            .pequeno
+                align-self: flex-start;
+                img
+                    height 100px
+            .servico
+                max-width 150px; display flex; align-items flex-start; position relative; margin-top -50px
+                picture
+                    max-width 125px; max-height 330px; overflow hidden;
+                    img
+                        max-width none; transition all 3s ease-in-out
+                figcaption
+                    writing-mode vertical-lr; transform rotate(180deg); font-size rem(16); line-height rem(18); letter-spacing letterSpacing(150)
+                    color $preto; font-weight $font-bold; text-transform uppercase; border-left 3px solid $laranja; padding 5px;
+                    position absolute; left -30px; bottom 0
+                    span
+                        font-weight $font-regular; margin-bottom 5px
+                &:hover
+                    picture
+                        img
+                            transform translateX(-25%);
+
++desktop-1366()
+    article#responsabilidade
+        .container	
+            .center
+                max-width 710px
+            .right
+                max-width 260px
+                .servico
+                    picture
+                        max-height 310px
+
++tablet-1024()
+    article#responsabilidade
+        overflow-y scroll; overflow-x hidden
+        .container	
+            flex-flow: row wrap; height auto; border-bottom 2px solid $laranja-claro
+            .left
+                width: 100%; 
+                .img
+                    max-width none; max-height: 250px; overflow: hidden; 
+                    img
+                        max-height none;
+                .assista
+                    button
+                        padding 30px 0; margin 0 auto; display block
+                        &:before
+                            display none;
+                    h3
+                        position relative; left 50%; top auto; transform translateX(-50%); font-size rem(50); opacity .2
+            .center
+                margin: 0 auto; padding 70px 0 
+            .right
+                margin 0 auto; max-width 100%; flex-flow row wrap; height auto; justify-content space-between;
+                .servico
+                    margin-top 0
+
++mobile-600()
+    article#responsabilidade
+        .container	
+            .left
+                .assista
+                    h3
+                        font-size rem(30)
+            .center
+                padding 20px 0
+                .logo
+                    flex-flow row wrap;
+                    .img
+                        margin: 20px auto;
+                    p
+                        width 100%;
+            .right
+                justify-content: center; padding-bottom 35px
+                a
+                    display none

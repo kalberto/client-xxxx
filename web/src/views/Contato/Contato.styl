@@ -1,0 +1,176 @@
+// Contato
+
+article#contato
+    background-image url("~@images/logos/xxxx_marcaDagua_branca.png"); background-position calc(100% - 250px) calc(50% - 75px);
+    background-repeat no-repeat; background-size 150px auto
+    .container
+        height 100%; display flex; align-items flex-start; justify-content flex-start; 
+        .left
+            max-width 450px; width 100%; height 100%; display flex; align-items center; justify-content space-around; flex-direction column
+            .titulo
+                align-self: flex-start; max-width 210px; padding 35px 0 35px 35px; border-left 2px solid $laranja
+                h2
+                    font-size rem(25); line-height rem(40); text-transform uppercase; font-weight $font-regular
+                p
+                    font-size rem(14); line-height rem(24); text-transform uppercase; font-weight $font-bold;
+            .links
+                .link
+                    display flex; margin-bottom 20px;
+                    .img
+                        margin-right 15px;
+                        svg
+                            transition all 0.5s ease
+                    .info
+                        strong
+                            text-transform uppercase;
+                        strong, p
+                            font-size rem(14); line-height rem(24); transition all 0.5s ease; 
+                    &:hover
+                        svg
+                            fill $laranja
+                        strong, p
+                            color $laranja
+            .assista
+                width 100%; text-align center; border-right 2px solid $laranja; padding 20px 0; position relative;
+                button
+                    position relative; cursor pointer; font-size rem(18); 
+                    img
+                        display: inline-block; margin-right 15px; 
+                h3
+                    position absolute; left 110%; font-size rem(105); font-weight $font-light; text-transform uppercase;
+                    letter-spacing letterSpacing(350); color $preto; opacity .1; pointer-events none; user-select none;
+                    top 50%; transform translateY(-50%); mask-image radial-gradient(circle, rgba(#000, .3) 70%, rgba(#000, 0));
+        .center
+            max-width 650px; width 100%; padding 80px 25px;
+            form
+                max-width 600px; width 100%; margin 0 auto
+                .input
+                    display flex; width 100%; margin-bottom rem(25); align-items center; position relative;
+                    label
+                        flex-shrink 0; width 100px; font-weight $font-bold; color #9fa3a7; font-size rem(12);
+                        text-transform uppercase; 
+                    input, textarea, select
+                        width 100%; border 0; background transparent; border-bottom 1px solid #cccccc;
+                        padding 10px 20px 10px 0; font-size rem(16); font-weight $font-semibold; color $preto;
+                        outline 0; transition all .3s ease; appearance none
+                        &:focus, &:hover
+                            border-bottom-color $laranja
+                    textarea
+                        resize: none; height: 110px;
+                    .erro
+                        position absolute; bottom -15px; font-size rem(12); color $laranja; right 5px; font-weight $font-medium
+                    &.select
+                        select
+                            padding-right 50px
+                        &:before
+                            content ''; background url("~@svgs/icon_seta_select.svg"); position absolute; top 50%; right 20px; width 20px; height 20px;
+                            display block; transform translateY(-50%); pointer-events none
+                    &.required
+                        &:after
+                            content '*'; position absolute; top 50%; transform translateY(-50%); right 5px; color $laranja; font-size rem(24);
+                            font-weight $font-semibold; pointer-events none
+                    &.mensagem
+                        label
+                            padding-top 10px; align-self flex-start
+                .enviar
+                    display flex; justify-content space-between; align-items center
+                    p
+                        font-size rem(15); line-height rem(30); color #9fa3a7;
+                        &:before
+                            content '*'; font-size rem(24); color $laranja; vertical-align: middle; margin rem(5) rem(5) 0;
+                            display inline-block; font-weight $font-semibold
+                    button
+                        font-size rem(14); letter-spacing letterSpacing(240); color $laranja; font-weight $font-bold; text-transform uppercase;
+                        cursor pointer; outline 0
+                        &:after
+                            content ''; display block; width 0; height 2px; background $laranja; transition all .4s ease; opacity 0
+                        &:disabled
+                            color $laranja-claro; cursor default
+                        &:hover:not(:disabled)
+                            &:after
+                                width 100%; opacity 1
+        .right
+            max-width 550px; width 100%; display flex; align-items flex-end; height 100%
+            img
+                pointer-events none
+            a
+                text-decoration none; margin-bottom 170px;
+            .bg
+                max-width 420px; height 170px; overflow hidden
+                img
+                    max-width none;
+            .servico
+                max-width 150px; display flex; align-items flex-start; position relative;
+                picture
+                    max-width 125px; max-height 330px; overflow hidden;
+                    img
+                        max-width none; transition all 3s ease-in-out
+                figcaption
+                    writing-mode vertical-lr; transform rotate(180deg); font-size rem(16); line-height rem(18); letter-spacing letterSpacing(150)
+                    color $preto; font-weight $font-bold; text-transform uppercase; border-left 3px solid $laranja; padding 5px;
+                    position absolute; left -30px
+                    span
+                        font-weight $font-regular; margin-bottom 5px
+                &:hover
+                    picture
+                        img
+                            transform translateX(-25%);
+
++desktop-1366()
+    article#contato
+        .container
+            .left
+                .links
+                    .link
+                        margin-bottom 10px
+            .center
+                padding 30px 25px
+            .right
+                .bg
+                    max-width 270px
+
++tablet-1024()
+    article#contato
+        overflow-y scroll; overflow-x hidden; background-position -25px calc(50% - 75px);
+        .container
+            flex-flow row wrap; height auto; border-bottom 2px solid $laranja-claro
+            .left
+                max-width 100%; height auto; padding: 0 70px;
+                .assista
+                    h3
+                        display none
+                .links
+                    padding: 50px 0; display flex; flex-flow row wrap;
+                    .link
+                        width 50%;
+            .center
+                max-width: 100%;
+                form
+                    max-width 600px; width 100%;
+            .right
+                margin 0 auto; max-width 100%; flex-flow row wrap; height auto; justify-content space-between;
+                a
+                    margin 0
+                .bg
+                    height 250px
+                .servico
+                    margin-top 0
+
++iphone-plus()
+    article#contato
+        .container
+            .left
+                .links
+                    .link
+                        width 100%;
+            .right
+                .bg
+                    display none;
+                .servico
+                    max-width 100%; flex-direction column
+                    picture
+                        max-width 100%; max-height 200px; order 1;
+                    figcaption
+                        writing-mode initial; transform initial; position static; left auto; border-left none; border-bottom 3px solid $laranja;
+                        span
+                            margin-bottom 0; padding-right 5px;

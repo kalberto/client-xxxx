@@ -1,0 +1,43 @@
+<!-- CADASTRAR BTN -->
+<md-button ng-click="vm.cadastrarManual()" class="md-fab md-accent" aria-label="Adicionar FAQ" style="position: fixed; right: 30px; bottom: 30px;">
+    <md-icon class="material-icons" aria-label="add">add</md-icon>
+</md-button>
+
+<md-toolbar class="md-table-toolbar md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <span>Manuais</span>
+    </div>
+</md-toolbar>
+
+<md-table-container class="md-whiteframe-1dp table-primary">
+    <table md-table ng-model="vm.selected" md-progress="vm.promise">
+        <thead md-head>
+        <tr md-row>
+            <th md-column><span>Nome</span></th>
+            <th md-column><span>Tipo do serviço</span></th>
+            <th md-column><span>Ativo</span></th>
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row md-select="manual" md-select-id="{{manual.id}}" md-auto-select ng-repeat="manual in vm.manuais.data">
+            <td md-cell>{{manual.nome}}</td>
+            <td md-cell>{{manual.tipo_servico}}</td>
+            <td md-cell>{{manual.ativo}}</td>
+            <td md-cell>
+                <div ui-sref="painel.manuais.salvar({url: manual.tipo_servico_url,id: manual.id})" class="fl">
+                    <md-button class="md-fab md-mini md-primary" aria-label="Editar">
+                        <md-icon class="material-icons" aria-label="create">create</md-icon>
+                    </md-button>
+                </div>
+                <div ng-click="vm.deletar($event, manual.id, $index)" class="fl">
+                    <md-button class="md-fab md-mini md-primary" aria-label="Deletar">
+                        <md-icon class="material-icons" aria-label="delete">delete</md-icon>
+                    </md-button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+
+<md-table-pagination class="md-whiteframe-1dp table-primary" md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.manuais.total}}" md-on-paginate="vm.carregarClientes" md-page-select></md-table-pagination>

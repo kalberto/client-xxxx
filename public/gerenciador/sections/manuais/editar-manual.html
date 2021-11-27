@@ -1,0 +1,54 @@
+<md-content class="md-whiteframe-1dp content-editar-usuario">
+    <md-content class="md-padding">
+        <form>
+            <div layout=row layout-wrap>
+                <div flex=100 flex-gt-sm=66>
+                    <div layout="row" layout-wrap>
+                        <md-input-container class="md-block" flex="100">
+                            <label>Nome</label>
+                            <input ng-model="vm.manual.nome" type="text">
+                        </md-input-container>
+                    </div>
+
+                    <div layout="row" layout-wrap>
+                        <md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+                            <label> Arquivo</label><br/><br/>
+                            <input type="file" ngf-select ng-model="vm.media" name="fileT" accept=".pdf,.doc,.docx" ngf-max-size="30MB" required ngf-model-invalid="errorFile" ngf-change="vm.enviarArquivo()">
+
+                            <i ng-show="myForm.fileT.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 30M</i>
+                            <div><br/><br/></div>
+                            <md-button class="md-raised btn-download" href="../{{vm.media.media_root.path}}{{vm.media.nome_temp}}" target="_blank" ng-if="vm.media != null && vm.media.temp" flex-gt-xs="20">Ver arquivo</md-button>
+                            <md-button class="md-raised btn-download" href="../{{vm.media.media_root.path}}{{vm.media.nome}}" target="_blank" ng-if="vm.media != null && !vm.media.temp" flex-gt-xs="20">Ver arquivo</md-button>
+
+                            <div></div>
+                        </md-input-container>
+                    </div>
+
+                    <!-- PERMISSOES END -->
+                    Status
+                    <br/><br/>
+                    <div class="demo-select-all-checkboxes md-warn" flex="100" >
+                        <md-checkbox ng-model="vm.manual.ativo" ng-value="{{vm.manual.ativo}}">
+                            Ativo?
+                        </md-checkbox>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </md-content>
+    <md-toolbar>
+        <div class="md-toolbar-tools" style="background: #FCFCFC;border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+            <div layout="row">
+                <md-button class="md-raised" aria-label="Excluir" ng-click="vm.deletar($event)" ng-if="vm.manual.id">
+                    Excluir
+                </md-button>
+                <md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.salvar()">
+                    Salvar
+                </md-button>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+            <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+    </md-content>
+</md-content>

@@ -1,0 +1,72 @@
+{
+    "pt-br": {
+        "titulos": {
+            "h1": "Contato",
+            "h2": "Envie sua dúvida, crítica ou sugestão",
+            "seja-parceiro": "Seja um parceiro xxxx"
+        },
+        "contatos": {
+            "servicos": "Contratação de Serviços",
+            "suporte": "Suporte Técnico",
+            "email": "E-mail",
+            "endereco": "Endereço"
+        },
+        "labels": {
+            "assunto": "Assunto",
+            "nome": "Nome",
+            "email": "E-mail",
+            "telefone": "Telefone",
+            "mensagem": "Mensagem",
+            "obrigatorio": "Campo obrigatório",
+            "razao_social": "Razão Social",
+            "cnpj": "CNPJ",
+            "endereco": "Endereço",
+            "cidade": "Cidade",
+            "estado": "Estado",
+            "redes_sociais": "Redes sociais",
+            "ramo_atuacao": "Ramo de Atuação"
+        },
+        "botoes": {
+            "enviar": "Enviar",
+            "enviando": "Enviando...",
+            "enviado": "Enviado!",
+            "erro": "Erro ao enviar",
+            "seja-parceiro": "veja como"
+        }
+    },
+    "en-gb": {
+        "titulos": {
+            "h1": "Contact",
+            "h2": "Send your doubt, criticism or suggestion",
+            "seja-parceiro": "Become a xxxx partner"
+        },
+        "contatos": {
+            "servicos": "Contracting Services",
+            "suporte": "Technical support",
+            "email": "E-mail",
+            "endereco": "Address"
+        },
+        "labels": {
+            "assunto": "Topic",
+            "nome": "Name",
+            "email": "E-mail",
+            "telefone": "Phone",
+            "mensagem": "Message",
+            "obrigatorio": "Required field",
+            "razao_social": "Company Name",
+            "cnpj": "CNPJ",
+            "endereco": "Address",
+            "cidade": "City",
+            "estado": "State",
+            "redes_sociais": "Social Media",
+            "ramo_atuacao": "Line of Business"
+        },
+        "botoes": {
+            "enviar": "Send",
+            "enviando": "Sending...",
+            "enviado": "Sent!",
+            "erro": "Error sending",
+            "seja-parceiro": "see how"
+        }
+    }
+}

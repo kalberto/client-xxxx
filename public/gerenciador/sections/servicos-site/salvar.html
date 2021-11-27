@@ -1,0 +1,130 @@
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Serviço Site</span>
+            </h2>
+        </div>
+    </md-toolbar>
+	<form>
+		<md-content class="md-padding md-whiteframe-1dp">
+			<md-list ng-cloak="">
+				<md-subheader class="md-no-sticky">Conteúdo</md-subheader>
+				Status
+				<br/><br/>
+				<div class="demo-select-all-checkboxes md-warn" flex="100" >
+					<md-checkbox ng-model="vm.registro.ativo" ng-value="{{vm.registro.ativo}}">
+						Ativo?
+					</md-checkbox>
+				</div>
+				<div layout="row" layout-wrap="">
+					Externo
+					<br/><br/>
+					<div class="demo-select-all-checkboxes md-warn" flex="100" >
+						<md-checkbox ng-model="vm.registro.externo" ng-value="{{vm.registro.externo}}" ng-change="changeExterno()">
+							Link?
+						</md-checkbox>
+					</div>
+				</div>
+				<div layout="row" layout-wrap>
+					<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+						<label> Foto Principal (630x450)</label><br/><br/>
+						<input ng-show="!vm.registro.media_id" type="file" ngf-select ng-model="vm.file" name="file" accept="image/*" ngf-max-size="3MB" required ngf-model-invalid="errorFile" ngf-change="vm.enviarImagem()">
+
+						<i ng-show="myForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+
+						<img width="200" ng-show="myForm.file.$valid" ngf-thumbnail="vm.file" class="thumb" flex-xs="100" flex-gt-xs="50" style="padding-top: 5px;     max-width: 100px;">
+
+						<img width="200" ng-show="vm.registro.media_id && !vm.file" class="thumb" flex-xs="100" flex-gt-xs="50" style="padding-top: 5px;     max-width: 100px;" ng-src="{{vm.registro.file}}">
+
+						<div></div>
+						<md-button class="md-raised md-primary" aria-label="Remove" ng-click="vm.removerImagem()" ng-show="vm.registro.media_id">
+							Remover imagem
+						</md-button>
+					</md-input-container>
+				</div>
+				<md-tabs class="md-primary" md-dynamic-height md-selected="vm.selectedTab">
+
+					<md-tab ng-repeat="item in vm.languages" label="{{item.locale}}">
+						<md-input-container class="md-block" flex=100 flex-gt-xs=100>
+							<label>Serviços Relacionados</label>
+							<md-select multiple ng-model="vm.registro.servicos">
+								<md-option ng-repeat="servico in vm.servicos[item.locale]" ng-value="servico.id">{{servico.title}}</md-option>
+							</md-select>
+						</md-input-container>
+						<md-input-container class="md-block" flex=100 flex-gt-xs=100>
+							<label>Vídeos</label>
+							<md-select multiple ng-model="vm.registro.videos">
+								<md-option ng-repeat="video in vm.videos[item.locale]" ng-value="video.id">{{video.title}}</md-option>
+							</md-select>
+						</md-input-container>
+						<div layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Título</label>
+								<input ng-model="vm.registro.languages[item.locale].title" type="text">
+							</md-input-container>
+						</div>
+						<div layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Slug</label>
+								<input ng-model="vm.registro.languages[item.locale].url" type="text">
+							</md-input-container>
+						</div>
+						<div layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Sub Título</label>
+								<input ng-model="vm.registro.languages[item.locale].sub_title" type="text">
+							</md-input-container>
+						</div>
+						<div ng-show="vm.registro.externo" layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Link</label>
+								<input ng-model="vm.registro.languages[item.locale].link" type="text">
+							</md-input-container>
+						</div>
+						<div layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Descrição 1</label>
+								<textarea ng-model="vm.registro.languages[item.locale].text_description_1" md-maxlength="400" rows="5" md-select-on-focus></textarea>
+							</md-input-container>
+						</div>
+						<div layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Descrição 2</label>
+								<textarea ng-model="vm.registro.languages[item.locale].text_description_2" md-maxlength="400" rows="5" md-select-on-focus></textarea>
+							</md-input-container>
+						</div>
+						<div layout="row" layout-wrap>
+							<div flex=100 flex-gt-sm=100>
+								<label>Benefícios</label><br/><br/>
+								<textarea ui-tinymce="vm.tynconf" ng-model="vm.registro.languages[item.locale].benefits"></textarea>
+								<br/><br/>
+							</div>
+						</div>
+						<div layout="row" layout-wrap>
+							<div flex=100 flex-gt-sm=100>
+								<label>Diferenciais</label><br/><br/>
+								<textarea ui-tinymce="vm.tynconf" ng-model="vm.registro.languages[item.locale].differentials"></textarea>
+								<br/><br/>
+							</div>
+						</div>
+					</md-tab>
+				</md-tabs>
+			</md-list>
+			<md-toolbar>
+				<div class="md-toolbar-tools" style="background: #FCFCFC; border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+					<div layout="row">
+						<md-button class="md-raised" aria-label="Cancelar" ui-sref="painel.produtos-site.listar">
+							Cancelar
+						</md-button>
+						<md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.salvar()">
+							Salvar
+						</md-button>
+					</div>
+				</div>
+			</md-toolbar>
+
+			<md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+				<md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+			</md-content>
+		</md-content>
+	</form>

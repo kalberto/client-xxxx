@@ -1,0 +1,57 @@
+<!-- BOTÃO PARA ADICIONAR ORGANIZACAO -->
+<md-button ng-click="vm.cadastrarOrganizacao()" class="md-fab md-warn" aria-label="Adicionar organização" style="position: fixed; right: 30px; bottom: 30px;">
+    <md-icon class="material-icons" aria-label="add">add</md-icon>
+</md-button>
+<md-toolbar class="md-table-toolbar md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <span>Organizações</span>
+    </div>
+</md-toolbar>
+
+<md-content class="md-whiteframe-1dp" style="">
+    <form ng-submit="vm.buscarOrganizacoes()">
+        <div flex layout="row" layout-padding layout-wrap>
+            <div flex layout="column">
+                <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                        <input placeholder="Buscar" ng-model="vm.search">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </form>
+</md-content>
+
+
+
+<md-table-container class="md-whiteframe-1dp table-primary">
+    <table md-table ng-model="vm.selected" md-progress="vm.promise">
+        <thead md-head md-order="vm.query.order" md-on-reorder="vm.carregarOrganizacoes">
+        <tr md-row>
+            <th md-column width="10"><span>Nome</span></th>
+            <th md-column ><span>Ações</span></th>
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row md-select="organizacao" md-select-id="{{organizacao.id}}" md-auto-select ng-repeat="organizacao in vm.organizacoes">
+            <td md-cell>{{organizacao.nome}}</td>
+            <td md-cell>
+                <div ui-sref="painel.usuarios.listar({slug: organizacao.slug})" class="fl">
+                    <md-button class="md-fab md-mini md-primary" aria-label="Editar">
+                        <md-icon class="material-icons" aria-label="people_outline">people_outline</md-icon>
+                    </md-button>
+                </div>
+
+                <div ui-sref="painel.organizacoes.salvar({slug: organizacao.slug})" class="fl">
+                <md-button class="md-fab md-mini md-primary" aria-label="Visualizar notas">
+                        <md-icon class="material-icons" aria-label="description">description</md-icon>
+                    </md-button>
+                </div>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+
+<md-table-pagination class="md-whiteframe-1dp table-primary" md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.organizacoesTotal}}" md-on-paginate="vm.carregarOrganizacoes" md-page-select></md-table-pagination>

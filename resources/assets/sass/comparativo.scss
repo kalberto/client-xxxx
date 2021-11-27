@@ -1,0 +1,314 @@
+$tamanho1: 331px;
+$tamanho2: 300px;
+$tamanho3: 167px;
+$alturaTable1: 114px;
+$alturaTable2: 91px;
+$bgColor1: #ecf0f1;
+$bgColor2: #e3e9ea;
+$bgColor3: #f5f7f8;
+$borderTable: #dddddd;
+
+.conteudo-comparativoFastpack {
+    position: relative;
+    margin-top: -231px;
+    padding-bottom: 90px;
+
+    .saibaMaisComparativo {
+        margin: 0 15px 0 30px;
+        text-transform: uppercase;
+
+        div {
+            width: 200px;
+            padding: 7px 20px;
+            text-align: center;
+        }
+    }
+
+    .comparativoFastpack {
+        background: transparent;
+        margin-bottom: 15px;
+
+        tr {
+            &:not(:first-child):not(:last-child) {
+                border-bottom: 2px solid $borderTable
+            }
+
+            th.border {
+                border-bottom: 2px solid $borderTable
+            }
+
+            &.maior {
+
+                td,
+                th {
+                    font-size: 20px;
+
+                    strong {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            td,
+            th {
+                font-size: 16px;
+
+                strong {
+                    font-size: 16px;
+                }
+
+                img {
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+
+                .logo {
+                    width: 180px;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                &.textLeft {
+                    text-align: left;
+
+                }
+            }
+
+            th {
+                text-transform: uppercase;
+                text-align: center;
+                color: #000000;
+                font-weight: 400;
+
+                strong {
+                    color: #000000;
+                }
+
+                &.variacao1 {
+                    background: #fff;
+                    height: $alturaTable1;
+                    width: $tamanho1;
+                }
+
+                &.variacao2 {
+                    background: $bgColor1;
+                    height: $alturaTable1;
+                    width: $tamanho1;
+                }
+
+                &.variacao3 {
+                    background: $bgColor3;
+                    height: $alturaTable2;
+                    width: $tamanho1;
+                }
+
+                &.variacao4 {
+                    background: $bgColor2;
+                    height: $alturaTable2;
+                    width: $tamanho1;
+                }
+
+                &.variacao5 {
+                    background: $bgColor2;
+                    height: $alturaTable2;
+                    width: $tamanho2;
+                }
+
+                &.variacao6 {
+                    background: $bgColor2;
+                    height: $alturaTable2;
+                    width: $tamanho3;
+                }
+
+                &.variacao7 {
+                    background: $bgColor1;
+                    height: $alturaTable2;
+                    width: $tamanho1;
+                }
+
+                &.variacao8 {
+                    background: #fff;
+                    height: $alturaTable2;
+                    width: $tamanho1;
+                }
+
+                &.variacao9 {
+                    background: $bgColor1;
+                    height: $alturaTable1;
+                    width: 465px;
+                }
+
+                &.variacao10 {
+                    background: $bgColor2;
+                    height: $alturaTable2;
+                    width: $tamanho3;
+                }
+            }
+
+            td {
+                text-align: center;
+                color: #000000;
+
+                &.variacao1 {
+                    background: #fff;
+                    height: $alturaTable1;
+                    width: $tamanho1;
+                }
+
+                &.variacao2 {
+                    background: $bgColor1;
+                    height: $alturaTable1;
+                    width: $tamanho1;
+                }
+
+                &.variacao3 {
+                    background: $bgColor3;
+                    height: $alturaTable2;
+                    width: $tamanho1;
+                }
+
+                &.variacao4 {
+                    background: $bgColor2;
+                    height: $alturaTable2;
+                    width: $tamanho1;
+                }
+
+                &.variacao5 {
+                    background: $bgColor2;
+                    height: $alturaTable2;
+                    width: $tamanho2;
+                }
+
+                &.variacao6 {
+                    background: $bgColor2;
+                    height: $alturaTable2;
+                    width: $tamanho3;
+                }
+
+                &.variacao7 {
+                    background: $bgColor1;
+                    height: $alturaTable2;
+                    width: $tamanho1;
+                }
+
+                &.variacao8 {
+                    background: #fff;
+                    height: $alturaTable2;
+                    width: $tamanho1;
+                }
+
+                &.variacao9 {
+                    background: $bgColor1;
+                    height: $alturaTable1;
+                    width: 465px;
+                }
+
+                &.variacao10 {
+                    background: $bgColor1;
+                    height: $alturaTable2;
+                    width: $tamanho3;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .conteudo-comparativoFastpack {
+        .comparativoFastpack {
+            tr:nth-child(n + 3) {
+
+                td,
+                th {
+                    width: 33% !important;
+                }
+            }
+
+            tr {
+                td {
+                    .logo {
+                        width: auto;
+                        max-width: 180px;
+                    }
+                }
+            }
+
+            .pacoteComparativo {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .conteudo-comparativoFastpack {
+        .saibaMaisComparativo {
+            margin-bottom: 10px;
+        }
+
+        .comparativoFastpack {
+            tr:nth-child(n + 3) {
+
+                td,
+                th {
+                    width: 50% !important;
+                    height: auto !important;
+                    vertical-align: top;
+
+                    &:first-child {
+                        display: none;
+                    }
+
+                    &:nth-last-child(2),
+                    &:last-child {
+                        padding: 40px 5px 10px;
+                    }
+                }
+            }
+
+            tr {
+
+                td,
+                th {
+                    padding: 0 5px;
+
+                    &.variacao3 {
+                        background: #fff;
+                    }
+
+                    &.variacao4 {
+                        background: $bgColor1;
+                    }
+                }
+
+                td[data-caption],
+                th[data-caption] {
+                    position: relative;
+
+                    &:before {
+                        content: attr(data-caption);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 30px;
+                        display: block;
+                        width: calc(200% - 1px);
+                        background: $bgColor2;
+                        line-height: 30px;
+                        font-size: 1.4rem;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .pacoteComparativo {
+
+                +td,
+                +th {
+                    display: none;
+                }
+            }
+        }
+    }
+}

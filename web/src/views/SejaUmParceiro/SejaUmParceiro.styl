@@ -1,0 +1,209 @@
+// Seja Um Parceiro
+
+article#seja-parceiro
+    background-image url("~@images/logos/xxxx_marcaDagua_branca.png"); background-position calc(100% - 250px) calc(50% - 75px);
+    background-repeat no-repeat; background-size 150px auto
+    .container
+        height 100%; display flex; align-items flex-start; justify-content space-between; 
+        .left
+            max-width 450px; width 100%; height 100%; display flex; align-items center; justify-content center; flex-direction column
+            >>> .titulo, >>> .texto
+                align-self: flex-start; padding 10px 0 10px 25px;
+                p
+                    font-size rem(14); line-height rem(24);
+                    &:not(:last-child)
+                        margin-bottom 25px
+                h2
+                    font-size rem(24); line-height rem(40); text-transform uppercase; font-weight $font-regular
+                    color $laranja
+            >>> .titulo
+                border-left 2px solid $laranja; max-width 365px; margin-bottom 40px
+            >>> .texto
+                max-width 350px
+        .center
+            max-width 650px; width 100%; padding 80px 25px;
+            form
+                max-width 600px; width 100%; margin 0 auto; display flex;
+                flex-wrap wrap;
+                .input
+                    display flex; width 100%; margin-bottom rem(25); align-items center; position relative;
+                    max-width 100%
+                    label
+                        flex-shrink 0; width 100px; font-weight $font-bold; color #9fa3a7; font-size rem(12);
+                        text-transform uppercase; 
+                    input, textarea, select
+                        width 100%; border 0; background transparent; border-bottom 1px solid #cccccc;
+                        padding 10px 20px 10px 0; font-size rem(16); font-weight $font-semibold; color $preto;
+                        outline 0; transition all .3s ease; appearance none
+                        &:focus, &:hover
+                            border-bottom-color $laranja
+                    textarea
+                        resize: none; height: 110px;
+                    .erro
+                        position absolute; bottom -15px; font-size rem(12); color $laranja; right 5px; font-weight $font-medium
+                    &.select
+                        select
+                            padding-right 50px
+                        &:before
+                            content ''; background url("~@svgs/icon_seta_select.svg"); position absolute; top 50%; right 20px; width 20px; height 20px;
+                            display block; transform translateY(-50%); pointer-events none
+                    &.required
+                        &:after
+                            content '*'; position absolute; top 50%; transform translateY(-50%); right 5px; color $laranja; font-size rem(24);
+                            font-weight $font-semibold; pointer-events none
+                    &.mensagem
+                        label
+                            padding-top 10px; align-self flex-start
+                    &.multiple
+                        label
+                            align-self flex-start; padding-top 13px
+                        ul, li
+                            width 100%
+                        li
+                            &:not(:last-child)
+                                padding-bottom 10px
+                        &.required:after
+                            content '*'; position absolute; top 5px; transform none
+                    &._50
+                        max-width 50%
+                        + ._50
+                            padding-left 10px
+                .enviar
+                    display flex; justify-content space-between; align-items center; width 100%
+                    p
+                        font-size rem(15); line-height rem(30); color #9fa3a7;
+                        &:before
+                            content '*'; font-size rem(24); color $laranja; vertical-align: middle; margin rem(5) rem(5) 0;
+                            display inline-block; font-weight $font-semibold
+                    button
+                        font-size rem(14); letter-spacing letterSpacing(240); color $laranja; font-weight $font-bold; text-transform uppercase;
+                        cursor pointer; outline 0
+                        &:after
+                            content ''; display block; width 0; height 2px; background $laranja; transition all .4s ease; opacity 0
+                        &:disabled
+                            color $laranja-claro; cursor default
+                        &:hover:not(:disabled)
+                            &:after
+                                width 100%; opacity 1
+        .right
+            max-width 550px; width 100%; display flex; align-items flex-end; height 100%
+            display flex; align-items center; justify-content flex-start; flex-direction column;
+            img
+                pointer-events none
+            a
+                text-decoration none; margin-bottom 170px;
+            .bg
+                max-width 420px; height 170px; overflow hidden
+                img
+                    max-width none;
+            .video
+                position relative; cursor pointer; max-width 65%; max-height 100%
+                figcaption
+                    h3
+                        position absolute; font-size rem(30); line-height rem(40); text-transform uppercase
+                        left 50%; top 10%; border-left 1px solid $laranja; padding-left 20px; color #fff;
+                        max-width 230px; transform translateX(-50%);
+                    button
+                        position absolute; top 50%; left 50%; transform translate(-50%, -50%); text-align center;
+                        color #fff; cursor pointer
+                        img
+                            display block; margin 5px auto
+            .links
+                margin-top 15px
+                .link
+                    display flex; margin-bottom 20px;
+                    .img
+                        margin-right 15px;
+                        svg
+                            transition all 0.5s ease
+                    .info
+                        strong
+                            text-transform uppercase;
+                        strong, p
+                            font-size rem(14); line-height rem(24); transition all 0.5s ease; 
+                    &:hover
+                        svg
+                            fill $laranja
+                        strong, p
+                            color $laranja
+
++desktop-1366()
+    article#seja-parceiro
+        .container
+            .left
+                max-width 335px;
+                .links
+                    .link
+                        margin-bottom 10px
+            .center
+                padding 30px 25px
+                form
+                    .input
+                        &._50
+                            max-width 100%
+                            + ._50
+                                padding-left 0
+            .right
+                max-width 370px
+                .bg
+                    max-width 270px
+                .video
+                    max-width 90%; max-height none
+
++tablet-1024()
+    article#seja-parceiro
+        overflow-y scroll; overflow-x hidden; background-position -25px calc(50% - 75px);
+        .container
+            flex-flow row wrap; height auto; border-bottom 2px solid $laranja-claro
+            .left
+                max-width 100%; height auto; padding: 0 70px;
+                .assista
+                    h3
+                        display none
+                .links
+                    padding: 50px 0; display flex; flex-flow row wrap;
+                    .link
+                        width 50%;
+            .center
+                max-width: 100%;
+                form
+                    max-width 600px; width 100%;
+            .right
+                margin 0 auto; max-width 100%;
+                a
+                    margin 0
+                .bg
+                    height 250px
+                .servico
+                    margin-top 0
+
++mobile-600()
+    article#seja-parceiro
+        .container
+            .left
+                padding: 0 20px;
+            .right
+                .video
+                    max-height: 50vh; overflow: hidden; max-width 100%
+                    figcaption
+                        button
+                            top 80%;
+
++iphone-plus()
+    article#seja-parceiro
+        .container
+            .left
+                .links
+                    .link
+                        width 100%;
+            .right
+                .bg
+                    display none;
+                .servico
+                    max-width 100%; flex-direction column
+                    picture
+                        max-width 100%; max-height 200px; order 1;
+                    figcaption
+                        writing-mode initial; transform initial; position static; left auto; border-left none; border-bottom 3px solid $laranja;
+                        span
+                            margin-bottom 0; padding-right 5px;

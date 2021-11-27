@@ -1,0 +1,16 @@
+// Btn solicite
+
+.BtnSolicite
+    .btn
+        text-decoration none; display block; font-size rem(24); line-height rem(34); letter-spacing letterSpacing(150);
+        background $laranja calc(100% - 3px); color $branco; font-weight $font-bold; text-align center; padding rem(25); 
+        text-transform uppercase; transition all .3s ease; position relative;
+
+        &:after
+            content ''; position absolute; bottom 0; left 0; background $laranja-claro; height 3px; width 100%;
+            transition all .3s ease;
+
+        &:hover
+            background darken($laranja, 15%);
+            &:after
+                background darken($laranja-claro, 15%)

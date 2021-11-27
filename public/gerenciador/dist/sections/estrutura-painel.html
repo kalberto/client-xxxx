@@ -1,0 +1,86 @@
+<div ng-controller="PainelController as vm" layout="column" style="height:100%" ng-cloak>
+
+    <section layout="row" flex ng-show="vm.user.id">
+
+
+        <!-- MENU LATERAL ESQUERDO -->
+        <md-sidenav class="md-sidenav-left md-whiteframe-z1 sidebar-menu" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+
+            <!-- LOGO -->
+            <md-toolbar class="sidebar-menu-top">
+                <div class="logo white"></div>
+            </md-toolbar>
+
+            <!-- ITENS DO MENU DINÂMICO -->
+
+            <md-list ng-click="vm.toggleSideNav()">
+
+                <md-list-item md-ink-ripple="#FFFFFF" ui-sref-active="active" ng-repeat="menu in vm.menus">
+                    <a ui-sref="{{menu.modulo_list}}">
+                       <md-icon class="material-icons" aria-label="{{menu.icone}}">{{menu.icone}}</md-icon>
+                        <label>{{menu.nome}}</label>
+                    </a>
+                </md-list-item>
+
+            </md-list>
+        </md-sidenav>
+
+
+        <md-content flex style="background-color: #efefef;" id="mainContent">
+
+            <!-- TOOLBAR PRINCIPAL -->
+            <md-toolbar class="md-whiteframe-1dp toolbar-painel" flex>
+                <div class="md-toolbar-tools">
+
+                    <!-- ICONE DE MENU (Apenas para Mobile) -->
+                    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.toggleSideNav()" hide-gt-sm show-xs>
+                        <md-icon class="material-icons" aria-label="menu">menu</md-icon>
+                    </md-button>
+
+                    <!-- TÍTULO DA PÁGINA -->
+                    <h2>
+                        <span>{{$title}}</span>
+                    </h2>
+
+                    <span flex></span>
+
+                    <!-- MENU PARA EDITAR PERFIL E SAIR -->
+                    <md-menu md-offset="0 60" ng-if="!vm.user.media">
+
+                        <md-button ng-click="$mdOpenMenu($event)" class="md-fab md-mini cover-user" aria-label="Perfil" style="background-image: url(assets/img/avatar100x100.png); background-color:#FFF;"></md-button>
+
+                        <md-menu-content>
+                            <md-menu-item>
+                                <md-button ui-sref="painel.editar-perfil">Editar perfil</md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="vm.logout()">Sair</md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+
+                    <!-- MENU PARA EDITAR PERFIL E SAIR -->
+                    <md-menu md-offset="0 60" ng-if="vm.user.media">
+
+                        <md-button ng-click="$mdOpenMenu($event)" class="md-fab md-mini cover-user" aria-label="Perfil" style="background-image: url(../{{vm.user.media.media_root.path}}{{vm.user.media.nome}}); background-color:#FFF;"></md-button>
+
+                        <md-menu-content>
+                            <md-menu-item>
+                                <md-button ui-sref="painel.editar-perfil">Editar perfil</md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="vm.logout()">Sair</md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </div>
+            </md-toolbar>
+
+
+            <!-- CONTEUDO CENTRAL -->
+            <md-content layout-padding style="background: transparent;margin-top: 64px;">
+                <div ui-view style="max-width: 1200px;margin: 0 auto;"></div>
+            </md-content>
+        </md-content>
+    </section>
+</div>

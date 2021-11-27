@@ -1,0 +1,81 @@
+/**
+ *
+ *  Medias
+ *
+ */
+
+// Media query geral
+media(constraint, tamanho = 0, orient = '')
+    if type(constraint) == 'object'
+        tamanho = values(constraint)
+        constraint = keys(constraint)
+
+    if orient != ''
+        @media ({ constraint } unit( tamanho, 'px' )) and (orientation orient)
+            {block}
+    else
+        @media ({ constraint } unit( tamanho, 'px' ))
+            {block}
+
+// Media queries para desktop
+desktop-2560()
+    +media(max-width, 2560)
+        {block}
+
+desktop-1920()
+    +media(max-width, 1920)
+        {block}
+
+desktop-1680()
+    +media(max-width, 1680)
+        {block}
+
+desktop-1600()
+    +media(max-width, 1600)
+        {block}
+
+desktop-1440()
+    +media(max-width, 1440)
+        {block}
+
+desktop-1366()
+    +media(max-width, 1366)
+        {block}
+
+desktop-1280()
+    +media(max-width, 1280)
+        {block}
+
+desktop-1024()
+    +media(max-width, 1024, landscape)
+        {block}
+
+// Media queries para tablet
+tablet-1024()
+    +media(max-width, 1024, portrait)
+        {block}
+
+tablet-768()
+    +media(max-width, 768)
+        {block}
+
+// Media queries para mobile
+mobile-600()
+    +media(max-width, 600)
+        {block}
+
+android-s5()
+    +media(max-width, 360)
+        {block}
+
+iphone-plus()
+    +media(max-width, 414)
+        {block}
+
+iphone-x()
+    +media(max-width, 375)
+        {block}
+
+iphone-5()
+    +media(max-width, 320)
+        {block}

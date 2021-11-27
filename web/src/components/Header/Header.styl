@@ -1,0 +1,209 @@
+// Header
+
+#header
+    padding rem(35) rem(70) rem(35) rem(120); display flex; align-items center; justify-content space-between
+    &.white
+        h1
+            svg
+                .logo_xxxx_color
+                    fill #1b1b1b
+    .nav
+        display flex; align-items center; gap 30px
+        .mobile
+            display none
+    a
+        text-decoration none
+    h1
+        font 0/0 a;
+        svg
+            width 206px; height 74px; user-select none
+            .logo_xxxx_color
+                fill #fff; transition all .3s ease
+    .menu
+        display flex; align-items center; gap 30px
+        li
+            position relative;
+            a
+                text-decoration none; color $branco; font-size rem(16); text-transform uppercase; font-weight bold; display block;
+                &.router-link-exact-active
+                    &:before
+                        transform: scaleX(1) !important
+                &:before
+                    content ''; position absolute; width 38%; height 2px; background $laranja2; left 0; bottom -5px; transform scaleX(0)
+                    transition: all 0.5s ease; transform-origin left center;
+            &:hover
+                a
+                    &:before
+                        transform: scaleX(1)
+        &.secundario
+            border-left 1px solid $laranja-claro; padding-left 30px; gap 30px
+            li
+                max-width 105px; padding 10px 0 10px;
+                a
+                    color $laranja-claro
+                    &:before
+                        background $laranja-claro; width 100%
+
+    .language
+        position relative;
+        .flags
+            display flex; align-items center; flex-direction column; max-height 0; overflow hidden
+            transition: all 0.8s ease; background #fff; border-radius 5px; position absolute;
+            left 50%; transform translateX(-50%); top calc(100% + 20px); z-index 3
+            li
+                margin-bottom 10px; padding 10px 10px 5px; width 50px;
+                button
+                    cursor pointer; transition all 0.5s ease; filter grayscale(1)
+                &:hover, &.ativo
+                    button
+                        filter grayscale(0)
+    
+        &:hover
+            .flags
+                max-height 200px
+    
+    .language .flags
+        &:hover
+            max-height 200px
+        
+    &.white
+        .menu
+            li
+                a
+                    color $preto;
+                    &:before
+                        background $laranja-claro
+            &.secundario
+                li
+                    border-left-color $laranja;
+                    a
+                        color $laranja
+
++desktop-1366()
+    #header
+        .nav, .menu, .menu.secundario
+            gap 20px
+        .menu.secundario
+            padding-left 20px;
+
++desktop-1024()
+    #header
+        padding rem(35) rem(40) rem(35) rem(40);
+        .nav, .menu, .menu.secundario
+            gap 15px
+        .menu
+            li
+                a
+                    font-size rem(14)
+            &.secundario
+                padding-left 15px
+                li
+                    max-width 90px
+
++tablet-1024()
+    #header
+        padding rem(35) rem(40) rem(35) rem(40); flex-flow row wrap; min-height 144px; position fixed; top 0; left 0; width 100%;
+        z-index: 5; background: #1b1a1b url(/SPA/img/img-noise-370x370.2bd36db4.png);
+        &.white
+            background #eee url(/SPA/img/img-noise-370x370.2bd36db4.png);
+            button
+                i
+                    background #1b1a1b
+            .menu
+                li
+                    a
+                        color $preto;
+                        &:before
+                            background $laranja-claro
+                &.secundario
+                    li
+                        border-left-color $laranja;
+                        a
+                            color $laranja
+        .language
+            margin 0
+            > img
+                display none;
+
+            .flags
+                max-height none; position static; background transparent; width auto; flex-direction row;
+                transform: none; gap 15px; border-radius 0
+                li
+                    margin 0; padding 0; width auto
+                    button
+                        width auto; height auto
+
+        .nav
+            display flex; align-items center; width 100%; justify-content: flex-end;
+            height: 0px; overflow hidden; flex-direction: column; transition all 0.5s ease
+            gap 3em
+            &.ativo
+                height: calc(100vh - 144px);
+            .mobile
+                &.flags
+                    display flex; align-items center; flex-direction column; margin 50px 0
+                    li
+                        margin-bottom 10px; 
+                        button
+                            cursor pointer; filter grayscale(1); transition all 0.5s ease
+                        &:hover, &.ativo
+                            button
+                                filter grayscale(0)
+                &.redes
+                    display flex; align-items center; flex-direction column;
+                    li
+                        margin-bottom 15px; 
+
+        button
+            height 42px; width 42px; position relative; outline 0
+            i
+                width 35px; height 2px; background #fff; position absolute; left 50%; transform translateX(-50%); display block;
+                transition all 0.5s ease
+                &.first
+                    top 15px;
+                &.second
+                    bottom 15px;
+            &.ativo
+                i
+                    &.first
+                        top 50%; transform translate(-50%, -50%) rotateZ(45deg)
+                    &.second
+                        top 50%; transform translate(-50%, -50%) rotateZ(-45deg); bottom auto;
+        .menu
+            align-items center; width: 100%; justify-content: center; flex-direction column;
+            gap 3em
+            li
+                a
+                    font-size rem(18)
+            &.secundario
+                gap 3em
+                li
+                    max-width none; border-left none;
+
++iphone-plus()
+    #header
+        .nav
+            gap 1.5em
+            .mobile
+                &.flags, &.redes
+                    flex-direction: row;
+                    li
+                        margin 0 15px
+        .menu
+            gap 1.5em
+            li
+                a
+                    font-size rem(14)
+            &.secundario
+                gap 1.5em
+
++iphone-x()
+    #header
+        .nav, .menu, .menu.secundario
+            gap 1.25em
+
++iphone-5()
+    #header
+        .logo
+            svg
+                width: 140px;

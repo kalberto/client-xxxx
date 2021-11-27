@@ -1,0 +1,61 @@
+<!-- BOTÃO PARA ADICIONAR ADMINISTRADOR -->
+<md-button ng-click="vm.cadastrarAdministradores()" class="md-fab md-warn" aria-label="Adicionar administrador" style="position: fixed; right: 30px; bottom: 30px;">
+    <md-icon class="material-icons" aria-label="add">add</md-icon>
+</md-button>
+
+<md-content class="md-whiteframe-1dp" style="">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Administradores</span>
+            </h2>
+        </div>
+    </md-toolbar>
+
+    <div flex layout="row" layout-padding layout-wrap>
+
+        <div flex layout="column">
+
+            <div layout="row" layout-align="center">
+                <md-input-container flex>
+                    <input placeholder="Nome ou e-mail" ng-model="vm.search">
+                </md-input-container>
+            </div>
+        </div>
+    </div>
+</md-content>
+
+<!-- BARRA COM QUANTIDADE DE RESULTADOS ENCONTRADOS E ORDENAÇÃO -->
+<div class="barra-resultados" layout-padding layout="row" ng-show="vm.registros.data.length > 0">
+    <div class="quantidade-itens" layout="row" layout-align="center center">{{vm.registros.data.length}} Administradores</div>
+</div>
+
+<!-- LISTA DE ADMINISTRADORES -->
+<div layout="row" layout-wrap ng-hide="vm.registros.data.length === 0">
+
+    <div flex flex-xs="100" flex-sm="50" flex-md="50" flex-lg="25" flex-xl="20" layout="column" ng-repeat="administrador in vm.registros.data | filter:vm.search">
+        <md-card>
+            <md-card-content class="content-card-usuarios">
+                <div layout="row">
+                    <img class="face" src="assets/img/default_user.png" alt="" ng-if="administrador.media_id == null && administrador.media == null">
+                    <img class="face" src="../{{administrador.media.media_root.path}}{{administrador.media.nome}}" alt="Foto do usuário" ng-if="administrador.media_id != null && administrador.media != null" ng-cloak>
+                </div>
+                <div layout="column" layout-align="center center">
+                    <p class="md-body-2">{{administrador.cargo}}</p>
+                    <p class="md-body-1">{{administrador.nome}} {{administrador.sobrenome}}</p>
+                </div>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="center">
+                <md-button ui-sref="painel.administradores.salvar({id: administrador.id})" class="md-raised md-warn md-hue-2">Editar</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+</div>
+
+<md-table-pagination class="md-whiteframe-1dp table-primary" md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.registros.total}}" md-on-paginate="vm.carregarAdministradores" md-page-select></md-table-pagination>
+
+<!-- INDICADOR DE CARREGAMENTO -->
+<div class="progress-content" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+    <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+</div>

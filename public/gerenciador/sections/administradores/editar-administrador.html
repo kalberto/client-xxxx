@@ -1,0 +1,159 @@
+<script src="editar-administrador.controller.js"></script>
+<md-content class="md-whiteframe-1dp content-editar-usuario">
+    <!--
+        TAB CONTA
+    -->
+    <md-tabs class="md-primary" md-dynamic-height>
+        <md-tab label="Conta">
+            <md-content class="md-padding">
+                <form>
+
+                    <div layout=row layout-wrap>
+
+                        <div flex=100 flex-gt-sm=33>
+
+                            <div layout="column">
+                                <img class="face" src="assets/img/default_user.png" alt="Foto do usuário" ng-if="vm.hasMedia == false && !vm.hasTempMedia">
+                                <img class="face" src="../{{vm.administrador.media.media_root.path}}{{vm.administrador.media.nome}}" alt="Foto do usuário" ng-if="vm.hasMedia && !vm.hasTempMedia" ng-cloak>
+                                <img class="face" src="../{{vm.tempMedia.media_root.path}}{{vm.tempMedia.nome}}" alt="Foto do usuário" ng-if="vm.hasTempMedia" ng-cloak>
+                                <input id="imagem-administrador" type="file" ngf-select ng-model="vm.media" name="fileT" accept="image/*" ngf-max-size="1MB" required ngf-model-invalid="errorFile" ngf-change="vm.enviarArquivo()" hidden>
+                                <i ng-show="myForm.fileT.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 1M</i>
+                                <md-button class="btn-editar" aria-label="Editar" ng-click="vm.fileChooser()">
+                                    Editar
+                                </md-button>
+                            </div>
+
+                        </div>
+
+                        <div flex=100 flex-gt-sm=66>
+                          
+
+                            <div layout="row" layout-wrap>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Nome</label>
+                                    <input ng-model="vm.administrador.nome" type="text">
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Sobrenome</label>
+                                    <input ng-model="vm.administrador.sobrenome" type="text">
+                                </md-input-container>
+                            </div>
+
+                            <div layout="row" layout-wrap  ng-if="vm.administrador.id">
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Telefone</label>
+                                    <input ng-model="vm.administrador.telefone" type="text" ui-br-phone-number-mask>
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50" >
+                                    <label>Ultimo acesso</label>
+                                    <input ng-model="vm.administrador.ultimo_acesso" type="datetime" disabled>
+                                </md-input-container>
+                            </div>
+
+                            <div layout="row" layout-wrap  ng-if="!vm.administrador.id">
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Telefone</label>
+                                    <input ng-model="vm.administrador.telefone" type="text" ui-br-phone-number-mask>
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50" >
+                                    <label>E-mail</label>
+                                    <input ng-model="vm.administrador.email" type="email">
+                                </md-input-container>
+                            </div>
+
+                            <div layout="row" layout-wrap ng-if="!vm.administrador.id">
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Senha</label>
+                                    <input ng-model="vm.administrador.password" type="password">
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Confirme sua senha</label>
+                                    <input ng-model="vm.administrador.re_password" type="password">
+                                </md-input-container>
+                            </div>
+
+                            <div layout="row" layout-wrap ng-if="vm.administrador.id">
+                                <md-input-container class="md-block" flex="100">
+                                    <label>E-mail</label>
+                                    <input ng-model="vm.administrador.email" type="email" disabled>
+                                </md-input-container>
+                            </div>
+                            <!-- PERMISSOES -->
+                            Módulos de acesso
+                            <br/><br/>
+                            <div class="demo-select-all-checkboxes md-warn" flex="100" ng-repeat="item in vm.modulos">
+                              <md-checkbox ng-model="vm.administrador.permissions[item.id]" ng-value="{{item.id}}">
+                               {{ item.nome }}
+                              </md-checkbox>
+                            </div>
+
+                            <!-- PERMISSOES END -->
+
+                            Status
+                            <br/><br/>
+                            <div class="demo-select-all-checkboxes md-warn" flex="100" >
+                                <md-checkbox ng-model="vm.administrador.ativo" ng-value="{{vm.administrador.ativo}}">
+                                    Ativo?
+                                </md-checkbox>
+                            </div>
+                          </div>
+
+                          
+                        </div>
+
+                    </div>
+
+                </form>
+            </md-content>
+            <md-toolbar>
+                <div class="md-toolbar-tools" style="background: #FCFCFC;border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+                    <div layout="row">
+                        <md-button class="md-raised" aria-label="Excluir" ng-click="vm.deletar($event)" ng-if="vm.administrador.id">
+                            Excluir
+                        </md-button>
+                        <md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.salvar()">
+                            Salvar
+                        </md-button>
+                    </div>
+                </div>
+            </md-toolbar>
+            <md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+                <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+            </md-content>
+        </md-tab>
+
+        <!--
+            TAB SENHA
+        -->
+        <md-tab label="Senha" ng-if="vm.administrador.id">
+            <md-content class="md-padding">
+                <form class="formAlterarSenha">
+                    <div layout=row layout-wrap>
+                        <md-input-container class="md-block" flex=100>
+                            <label>Nova senha</label>
+                            <input ng-model="vm.auth.password" type="password">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex=100>
+                            <label>Repetir nova senha</label>
+                            <input ng-model="vm.auth.re_password" type="password">
+                        </md-input-container>
+                    </div>
+                </form>
+
+            </md-content>
+            <md-toolbar>
+                <div class="md-toolbar-tools" style="background: #FCFCFC;border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+                    <div layout="row">
+                        <md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.changePass()">
+                            Salvar
+                        </md-button>
+                    </div>
+                </div>
+            </md-toolbar>
+        </md-tab>
+
+
+
+
+    </md-tabs>
+</md-content>

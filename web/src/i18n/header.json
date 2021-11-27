@@ -1,0 +1,24 @@
+{
+    "pt-br": {
+        "menu": {
+            "home": "Home",
+            "institucional": "Institucional",
+            "contato": "Contato",
+            "blog": "Blog",
+            "area-cliente": "Área do Cliente",
+            "seja-parceiro": "Seja um Parceiro",
+            "trabalhe-conosco": "Trabalhe Conosco"
+        }
+    },
+    "en-gb": {
+        "menu": {
+            "home": "Home",
+            "institucional": "Institutional",
+            "contato": "Contact",
+            "blog": "Blog",
+            "area-cliente": "Customer's area",
+            "seja-parceiro": "Become a Partner",
+            "trabalhe-conosco": "Work with Us"
+        }
+    }
+}

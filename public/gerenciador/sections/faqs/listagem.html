@@ -1,0 +1,61 @@
+<!-- CADASTRAR BTN -->
+<md-button ng-click="vm.cadastrarFaq()" class="md-fab md-accent" aria-label="Adicionar FAQ" style="position: fixed; right: 30px; bottom: 30px;">
+    <md-icon class="material-icons" aria-label="add">add</md-icon>
+</md-button>
+
+
+<md-toolbar class="md-table-toolbar md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <span>FAQs</span>
+    </div>
+</md-toolbar>
+
+<md-content class="md-whiteframe-1dp" style="">
+    <form ng-submit="vm.buscarFaqs()">
+        <div flex layout="row" layout-padding layout-wrap>
+            <div flex layout="column">
+                <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                        <input placeholder="Buscar" ng-model="vm.search">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </form>
+</md-content>
+
+
+
+<md-table-container class="md-whiteframe-1dp table-primary">
+    <table md-table ng-model="vm.selected" md-progress="vm.promise">
+        <thead md-head>
+            <tr md-row>
+                <th md-column><span>Pergunta</span></th>
+               
+                <th md-column width="50"><span>Ações</span></th>
+            </tr>
+        </thead>
+        <tbody md-body>
+            <tr md-row md-select="categoria" md-select-id="{{faq.id}}" md-auto-select ng-repeat="faq in vm.faqs.data">
+                <td md-cell>{{faq.pergunta}}</td>
+              
+                <td md-cell>    
+                    <div ui-sref="painel.faqs.salvar({url: faq.tipo_servico_url,id: faq.id})" class="fl">
+                        <md-button class="md-fab md-mini md-primary" aria-label="Editar">
+                            <md-icon class="material-icons" aria-label="create">create</md-icon>
+                        </md-button>
+                    </div>
+                  
+                    <div ng-click="vm.deletar($event, faq.id, $index)" class="fl">
+                        <md-button class="md-fab md-mini md-primary" aria-label="Deletar">
+                            <md-icon class="material-icons" aria-label="delete">delete</md-icon>
+                        </md-button>
+                    </div>
+                 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</md-table-container>
+
+<md-table-pagination class="md-whiteframe-1dp table-primary" md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.faqs.total}}" md-on-paginate="vm.carregarfaqs" md-page-select></md-table-pagination>

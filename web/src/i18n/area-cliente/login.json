@@ -1,0 +1,32 @@
+{
+    "pt-br": {
+        "labels": {
+            "bem-vindo": "Bem-vindo, faça o login.",
+            "email": "E-mail",
+            "senha": "Senha",
+            "esqueceu": "Esqueceu sua senha?"
+        },
+        "botoes": {
+            "esqueceu": "Clique aqui",
+            "enviar": "Entrar",
+            "enviando": "Autenticando...",
+            "enviado": "Autenticado!",
+            "erro": "Erro ao autenticar"
+        }
+    },
+    "en-gb": {
+        "labels": {
+            "bem-vindo": "Welcome, please login.",
+            "email": "E-mail",
+            "senha": "Password",
+            "esqueceu": "Forgot your password?"
+        },
+        "botoes": {
+            "esqueceu": "click here",
+            "enviar": "Log in",
+            "enviando": "Authenticating...",
+            "enviado": "Authenticated!",
+            "erro": "Error authenticating"
+        }
+    }
+}

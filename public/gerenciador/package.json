@@ -1,0 +1,49 @@
+{
+  "name": "gerenciador",
+  "version": "1.0.0",
+  "description": "Gerenciador do site da xxxx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alberto de Almeida Guilherme",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-animate": "^1.6.6",
+    "angular-aria": "^1.6.6",
+    "angular-cookies": "^1.6.6",
+    "angular-drag-and-drop-lists": "^2.1.0",
+    "angular-google-maps": "^2.4.1",
+    "angular-input-masks": "^4.0.1",
+    "angular-material": "^1.1.5",
+    "angular-material-data-table": "^0.10.10",
+    "angular-material-expansion-panel": "^0.7.2",
+    "angular-messages": "^1.6.6",
+    "angular-simple-logger": "^0.1.7",
+    "angular-ui-router": "^0.4.3",
+    "angular-ui-router-title": "^0.1.1",
+    "angular-ui-tinymce": "0.0.19",
+    "angular-youtube-mb": "^1.0.3",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-if": "^2.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-ng-config": "^1.5.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
+    "gulp-watch": "^4.3.11",
+    "moment": "^2.19.1",
+    "ng-file-upload": "^12.2.13",
+    "tinymce": "^4.7.1"
+  },
+  "devDependencies": {
+    "gulp-useref": "^3.1.2"
+  }
+}

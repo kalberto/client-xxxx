@@ -1,0 +1,705 @@
+/*
+Theme Name: xxxx (alterado)
+Author: e-tools (Grupo Gpac)
+*/
+
+/*
+		========================================
+				Headers
+		========================================
+*/
+header.header {
+	position: relative;
+	a#nav-clientes {
+		float: right;
+		padding: 10px 20px;
+		margin: 14px;
+		text-transform: uppercase;
+		color: #fff;
+		background: #c64322;
+		&:hover {
+			background: #b32400;
+		}
+	}
+	.menu li {
+		&:not(.ativo):hover:before, &.ativo:before {
+			content: '';
+			width: 100%;
+			position: absolute;
+			height: 6px;
+			bottom: -4px;
+			z-index: 0;
+			margin: 0;
+			background: #fccd03;
+		}
+		&:not(.ativo):hover:before, &.ativo a {
+			font-weight: 500;
+		}
+	}
+	picture img {
+		max-width: 100%;
+	}
+	.header-texto {
+		position: absolute;
+		width: 1000px;
+		padding: 105px 150px 25px;
+		top: 0;
+		left: 50%;
+		color: #fff;
+		text-align: left;
+		font-size: 3.4rem;
+		font-weight: 300;
+		text-shadow: 1px 0px 0 #fff;
+		transform: translateX(-50%);
+		background: rgba(0, 0, 0, 0.2);
+		strong {
+			font-weight: 700;
+			font-size: 3.1rem;
+			text-shadow: none;
+		}
+	}
+	.promocao {
+		position: relative;
+		text-transform: uppercase;
+		text-align: right;
+		color: #fff;
+		div {
+			position: absolute;
+			top: -204px;
+			right: 0;
+			float: right;
+			width: 190px;
+			z-index: 11;
+			height: 204px;
+			padding: 30px 15px;
+			box-sizing: border-box;
+			svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.texto {
+				position: absolute;
+				top: 0;
+				text-transform: uppercase;
+				text-align: right;
+				color: #fff;
+				p {
+					font-size: 1.2rem;
+					strong {
+						color: #fff;
+						font-size: 2.0rem;
+						a {
+							display: block;
+							color: #e75629;
+						}
+					}
+				}
+				.promocao-titulo {
+					font-size: 1.2rem;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+	.videos {
+		margin-top: -105px;
+		width: 100%;
+		height: 975px;
+		max-height: 1080px;
+		background: #000;
+		overflow: hidden;
+		video {
+			position: relative;
+			width: auto;
+			max-height: 1080px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		a {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: 8px;
+			background: rgba(0, 0, 0, 0.5);
+			font-weight: 100;
+			color: #fff;
+			z-index: 15;
+			text-shadow: 0 1px 0 #000;
+			svg {
+				position: relative;
+				top: -2px;
+				width: 20px;
+				height: 20px;
+				vertical-align: middle;
+			}
+		}
+	}
+	.full-width.destaque {
+		position: absolute;
+		top: 0;
+	}
+}
+	
+aside {
+	&.videos-pop {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+		z-index: 9999;
+		&.ativo {
+			display: table;
+		}
+		div {
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+			video {
+				width: 70%;
+				height: auto;
+				border: 5px solid #fff;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+			}
+		}
+	}
+}
+	
+@media only screen and (max-width: 768px) {
+	header.header {
+		.header-texto {
+			width: 100%;
+			padding-top: 70px;
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+		.videos {
+			margin-top: 0;
+			height: 650px;
+			max-height: 650px;
+			video {
+				max-height: 720px;
+			}
+			a {
+				right: auto;
+				left: 0;
+			}
+		}
+	}
+}
+	
+@media only screen and (max-width: 736px) {
+	header.header .menu li {
+		&:nth-child(1) a {
+			font-weight: 600;
+			border-bottom: 2px solid #fccd03;
+		}
+		&:nth-child(2) a {
+			font-weight: 400;
+		}
+	}
+}
+	
+@media only screen and (max-width: 667px) {
+	header.header {
+		.videos {
+			margin-top: -15px;
+			height: 430px;
+			max-height: 430px;
+			video {
+				max-height: 480px;
+			}
+		}
+		.header-texto strong {
+			font-size: 2.1rem;
+		}
+		.promocao div {
+			top: -118px;
+			width: 100%;
+			height: 118px;
+			padding: 20px 15px;
+			.texto p strong {
+				font-size: 1.9rem;
+			}
+		}
+	}
+}
+	
+@media only screen and (max-width: 400px) {
+	header.header {
+		.videos {
+			height: 325px;
+			max-height: 410px;
+			video {
+				max-height: 360px;
+			}
+		}
+		.header-texto {
+			padding-top: 60px;
+			padding-right: 15px;
+			padding-left: 15px;
+			padding-bottom: 15px;
+			strong {
+				font-size: 1.8rem;
+			}
+		}
+		.promocao div {
+			top: -96px;
+			width: 100%;
+			height: 96px;
+			padding: 20px 15px;
+			.texto {
+				p strong {
+					font-size: 1.4rem;
+				}
+				.promocao-titulo {
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.videos a {
+			bottom: -37px;
+			right: 0;
+			left: 0;
+			text-align: center;
+		}
+		picture.picture-mob {
+			margin-top: 50px;
+			height: 400px;
+			display: block;
+			overflow: hidden;
+			img {
+				max-width: none;
+			}
+		}
+	}
+}
+	
+/*
+	========================================
+			Conteudos
+	========================================
+*/
+.conteudo-home article#sobre .full-width {
+	margin-top: -44px;
+}
+
+/* PRODUTOS */
+.conteudo-produtos section {
+	&#conheca-produtos .listagem-produtos .row .column {
+		a.fleft:hover:before {
+			padding: 80px 0 0;
+			height: 63.5%;
+			z-index: 1;
+		}
+		.block-produto {
+			&.smart-box .top {
+				background: url(../assets/images/list-prod-smart-box.jpg) left center no-repeat;
+				background-size: cover;
+			}
+			.bottom {
+				min-height: 200px;
+				.mais {
+					position: absolute;
+					bottom: 20px;
+					right: 20px;
+				}
+			}
+		}
+	}
+	&#pacotes {
+		margin-bottom: 50px;
+	}
+}
+
+.block-produto.suporte p {
+	margin: 4rem auto 5rem;
+}
+
+/* Produtos | Fibra Connect */
+.conteudo-fibra-connect .vantagens ul li {
+	&:first-child {
+		background: url(../assets/images/produtos/svg/ico-laranja-full.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(2) {
+		background: url(../assets/images/produtos/svg/ico-laranja-download-upload.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(3) {
+		background: url(../assets/images/produtos/svg/ico-laranja-velocidade.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(4) {
+		background: url(../assets/images/produtos/svg/ico-laranja-fixedprice.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(5) {
+		background: url(../assets/images/produtos/svg/ico-laranja-up-speed.svg) left center no-repeat;
+		background-size: 44px;
+	}
+}
+
+/* Produtos | Fibra Call */
+.conteudo-fibra-call .vantagens ul li {
+	&:first-child {
+		background: url(../assets/images/produtos/svg/ico-laranja-telefone.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(2) {
+		background: url(../assets/images/produtos/svg/ico-laranja-comunicacao.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(3) {
+		background: url(../assets/images/produtos/svg/ico-laranja-tarifa.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(4) {
+		background: url(../assets/images/produtos/svg/ico-laranja-conexao.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(5) {
+		background: url(../assets/images/produtos/svg/ico-laranja-tecnologia.svg) left center no-repeat;
+		background-size: 44px;
+	}
+}
+
+/* Produtos | B Wifi */
+.conteudo-b-wifi .vantagens ul li {
+	&:first-child {
+		background: url(../assets/images/produtos/svg/ico-laranja-velocidade.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(2) {
+		background: url(../assets/images/produtos/svg/ico-laranja-full.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(3) {
+		background: url(../assets/images/produtos/svg/ico-laranja-login.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(4) {
+		background: url(../assets/images/produtos/svg/ico-laranja-wireless-comp.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(5) {
+		background: url(../assets/images/produtos/svg/ico-laranja-lock-invest.svg) left center no-repeat;
+		background-size: 44px;
+	}
+}
+
+/* Produtos | My Web */
+.conteudo-my-web .vantagens ul li {
+	&:first-child {
+		background: url(../assets/images/produtos/svg/ico-laranja-conexao.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(2) {
+		background: url(../assets/images/produtos/svg/ico-laranja-conection.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(3) {
+		background: url(../assets/images/produtos/svg/ico-laranja-sec.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(4) {
+		background: url(../assets/images/produtos/svg/ico-laranja-fixedprice.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(5) {
+		background: url(../assets/images/produtos/svg/ico-laranja-velocidade.svg) left center no-repeat;
+		background-size: 44px;
+	}
+}
+
+/* Produtos | B-Safe */
+.conteudo-b-safe .vantagens ul li {
+	&:first-child {
+		background: url(../assets/images/produtos/svg/ico-laranja-Antivirus2.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(2) {
+		background: url(../assets/images/produtos/svg/ico-laranja-antivirus.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(3) {
+		background: url(../assets/images/produtos/svg/ico-laranja-crosshair.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(4) {
+		background: url(../assets/images/produtos/svg/ico-laranja-suport.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(5) {
+		background: url(../assets/images/produtos/svg/ico-laranja-relatorio.svg) left center no-repeat;
+		background-size: 44px;
+	}
+}
+
+/* Produtos | Smart Box */
+.conteudo-smart-box .vantagens {
+	&.vantagens-1 ul li {
+		&:first-child {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-chamada.png) left center no-repeat;
+			background-size: 44px;
+		}
+		&:nth-child(2) {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-headset.png) left center no-repeat;
+			background-size: 44px;
+		}
+		&:nth-child(3) {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-grupo.png) left center no-repeat;
+			background-size: 44px;
+		}
+		&:nth-child(4) {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-grupo-2.png) left center no-repeat;
+			background-size: 44px;
+		}
+		&:nth-child(5) {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-telefone-wifi.png) left center no-repeat;
+			background-size: 44px;
+		}
+		&:nth-child(6) {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-nao-pertube.png) left center no-repeat;
+			background-size: 44px;
+		}
+		&:nth-child(7) {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-grupo-3.png) left center no-repeat;
+			background-size: 44px;
+		}
+	}
+	&.vantagens-2 ul li {
+		&:first-child {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-ramal.png) left center no-repeat;
+			background-size: 44px;
+		}
+		&:nth-child(2) {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-secretaria.png) left center no-repeat;
+			background-size: 44px;
+		}
+		&:nth-child(3) {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-bloqueio.png) left center no-repeat;
+			background-size: 44px;
+		}
+		&:nth-child(4) {
+			background: url(../assets/images/produtos/png/smart-box/ico-laranja-lock.png) left center no-repeat;
+			background-size: 44px;
+		}
+	}
+}
+
+/* Produtos | Fastpack */
+.conteudo-fastpack .vantagens ul li {
+	&:first-child {
+		background: url(../assets/images/produtos/svg/ico-laranja-lock-invest.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(2) {
+		background: url(../assets/images/produtos/svg/ico-laranja-velocidade.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(3) {
+		background: url(../assets/images/produtos/svg/ico-laranja-conexao.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(4) {
+		background: url(../assets/images/produtos/svg/ico-laranja-full.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(5) {
+		background: url(../assets/images/produtos/svg/ico-laranja-telefone.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(6) {
+		background: url(../assets/images/produtos/svg/ico-laranja-delivery.svg) left center no-repeat;
+		background-size: 44px;
+	}
+}
+
+/* Produtos | xxxx One */
+.conteudo-xxxx-one .vantagens ul li {
+	&:first-child {
+		background: url(../assets/images/produtos/svg/ico-laranja-telefone.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(2) {
+		background: url(../assets/images/produtos/svg/ico-laranja-conexao.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(3) {
+		background: url(../assets/images/produtos/svg/ico-laranja-pequena-empresa.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(4) {
+		background: url(../assets/images/produtos/svg/ico-laranja-delivery.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(5) {
+		background: url(../assets/images/produtos/svg/ico-laranja-contacts.svg) left center no-repeat;
+		background-size: 44px;
+	}
+}
+
+/* Produtos | xxxx Max */
+.conteudo-xxxx-max .vantagens ul li {
+	&:first-child {
+		background: url(../assets/images/produtos/svg/ico-laranja-benefits.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(2) {
+		background: url(../assets/images/produtos/svg/ico-laranja-target.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(3) {
+		background: url(../assets/images/produtos/svg/ico-laranja-grande-empresa.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(4) {
+		background: url(../assets/images/produtos/svg/ico-laranja-contacts.svg) left center no-repeat;
+		background-size: 44px;
+	}
+	&:nth-child(5) {
+		background: url(../assets/images/produtos/svg/ico-laranja-delivery.svg) left center no-repeat;
+		background-size: 44px;
+	}
+}
+
+/*  
+	==================================================
+		Wrapper - Login
+	==================================================
+*/
+.wrapper.conteudo-auth {
+	>h3 { margin-top: 65px; }
+	h3 {
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 2.125em;
+	}
+	p {
+		text-align: center;
+		color: #808080;
+		a {
+			color: #000;
+			text-decoration: underline;
+			&:visited, &:hover {
+				color: #000;
+				text-decoration: underline;
+			}
+		}
+	}
+	.formulario {
+		max-width: 315px;
+		margin: 65px auto;
+		form {
+			input {
+				width: 100%;
+				padding: 10px;
+				margin: 10px 0;
+				border: 1px solid #ccc;
+			}
+			button {
+				position: relative;
+				margin: 10px 90px;
+				width: 135px;
+				padding: 15px;
+				font-family: 'Roboto', Arial, sans-serif;
+				font-size: 16px;
+				color: #fff;
+				border: 0;
+				border-radius: 0;
+				text-transform: uppercase;
+				cursor: pointer;
+				&:after {
+					content: '';
+					display: block;
+					width: 0%;
+					height: 4px;
+					background: #fccd03;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					transition: all .3s;
+				}
+				&:hover:after {
+					width: 100%;
+				}
+			}
+		}
+		&.formulario-request {
+			margin-top: 15px;
+		}
+	}
+}
+
+form {
+	input, textarea, select {
+		transition: box-shadow 0.3s ease;
+	}
+	input.erro, textarea.erro, select.erro {
+		box-shadow: inset 0px 0px 0px 2px red;
+	}
+}
+
+.formulario .erros, .form-contato .erros {
+	padding-top: 8px;
+	clear: both;
+	text-align: right;
+}
+
+.formulario .erros p {
+	display: inline-block;
+	background: #a50000;
+	padding: 6px 8px;
+	margin: 6px 8px;
+	border-radius: 3px;
+	color: #fff;
+}
+
+.form-contato {
+	.erros p {
+		display: inline-block;
+		background: #a50000;
+		padding: 6px 8px;
+		margin: 6px 8px;
+		border-radius: 3px;
+		color: #fff;
+	}
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		border-radius: 0;
+		background-image: url('../assets/images/background/bg-select-arrow.png');
+		background-repeat: no-repeat;
+		background-position: 98% center;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.conteudo-home article#sobre {
+		.full-width {
+			margin-top: 0;
+			background: url(../assets/images/background/bg-section-1.png) 500px 150px no-repeat;
+		}
+		.pub-call {
+			margin-top: 55px;
+		}
+	}
+	.conteudo-produtos section#pacotes {
+		margin-bottom: 0;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.conteudo-home article#sobre .full-width {
+		margin-top: 37px;
+	}
+}

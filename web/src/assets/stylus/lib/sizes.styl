@@ -1,0 +1,39 @@
+/**
+ *
+ *  Sizes
+ *
+ */
+
+// Private Mixins
+// Estas mixins não devem ser acessadas diretamente
+_calculaRelacaoVwVh(valor, base, format = 'vw')
+    if ( ( valor / ( base * 0.01 ) * 1 ) < 100 )
+        unit( ( valor / ( base * 0.01 ) * 1 ), format )
+    else
+        unit( 100, format )
+
+_calculaRelacaoEmRem(valor, format = 'em')
+    unit( valor/$font-size, format );
+
+// Public Mixins
+em(valor)
+    _calculaRelacaoEmRem(valor);
+
+rem(valor)
+    _calculaRelacaoEmRem(valor, 'rem');
+
+vw(propriedade, valor = 0)
+    if (type(propriedade) == 'unit' || type(propriedade) == 'string') && valor == 0
+        _calculaRelacaoVwVh(propriedade, $base_width)
+    else
+        {propriedade} unit( valor, 'px' );
+        for $i in $supported-resolutions
+            if (_calculaRelacaoVwVh(valor, $i) < 100 )
+                +media(max-width, $i)
+                    {propriedade} _calculaRelacaoVwVh(valor, $i)
+
+vh(valor)
+    _calculaRelacaoVwVh(valor, $base_height, 'vh')
+
+letterSpacing($tracking)
+    ($tracking / 1000 ) * 1em;

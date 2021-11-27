@@ -1,0 +1,32 @@
+
+<!-- Dashboard -->
+<md-subheader class="md-no-sticky">Estatísticas gerais</md-subheader>
+<md-list-item class="dasboard-list">
+    <div flex=100 flex-gt-sm=100>
+
+		<div layout=row layout-wrap>
+            <div class="md-block dash-item" flex-xs="100" flex-gt-xs="50">
+                <p class="title">Administradores cadastrados</p>
+               	<p class="number">{{vm.dashboard.total_administradores}}</p>
+            </div>
+            <div class="md-block dash-item" flex-xs="100" flex-gt-xs="50">
+                <p class="title">Usuários cadastrados</p>
+               	<p class="number">{{vm.dashboard.total_usuarios}}</p>
+            </div>
+            <div class="md-block dash-item" flex-xs="100" flex-gt-xs="50">
+                <p class="title">Faqs cadastradas</p>
+               	<p class="number">{{vm.dashboard.total_faqs}}</p>
+            </div>
+            <div class="md-block dash-item" flex-xs="100" flex-gt-xs="50">
+                <p class="title">Manuais cadastrados</p>
+               	<p class="number">{{vm.dashboard.total_manuais}}</p>
+            </div>
+            <div class="md-block dash-item" flex-xs="100" flex-gt-xs="50">
+                <p class="title">Total de leads</p>
+               	<p class="number">{{vm.dashboard.total_leads}}</p>
+            </div>
+        </div>
+  
+    </div>
+</md-list-item>
+<!-- Dashboard END -->

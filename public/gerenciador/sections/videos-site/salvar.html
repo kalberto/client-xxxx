@@ -1,0 +1,82 @@
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Vídeo Site</span>
+            </h2>
+        </div>
+    </md-toolbar>
+	<form>
+		<md-content class="md-padding md-whiteframe-1dp">
+			<md-list ng-cloak="">
+				<md-subheader class="md-no-sticky">Conteúdo</md-subheader>
+				Status
+				<br/><br/>
+				<div class="demo-select-all-checkboxes md-warn" flex="100" >
+					<md-checkbox ng-model="vm.registro.ativo" ng-value="{{vm.registro.ativo}}">
+						Ativo?
+					</md-checkbox>
+				</div>
+				<div layout="row" layout-wrap>
+					<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+						<label> Foto Thumb (450x260)</label><br/><br/>
+						<input ng-show="!vm.registro.thumb_id" type="file" ngf-select ng-model="vm.file" name="file" accept="image/*" required ngf-model-invalid="errorFile" ngf-change="vm.enviarImagem()">
+
+						<i ng-show="myForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+
+						<img width="200" ng-show="myForm.file.$valid" ngf-thumbnail="vm.file" class="thumb" flex-xs="100" flex-gt-xs="50" style="padding-top: 5px;     max-width: 100px;">
+
+						<img width="200" ng-show="vm.registro.thumb_id && !vm.file" class="thumb" flex-xs="100" flex-gt-xs="50" style="padding-top: 5px;     max-width: 100px;" ng-src="{{vm.registro.thumb}}">
+
+						<div></div>
+						<md-button class="md-raised md-primary" aria-label="Remove" ng-click="vm.removerImagem()" ng-show="vm.registro.thumb_id">
+							Remover imagem
+						</md-button>
+					</md-input-container>
+				</div>
+				<div layout="row" layout-wrap>
+					<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+						<label> Vídeo (primeiro x segundo)</label><br/><br/>
+						<input ng-show="!vm.registro.video" type="file" ngf-select ng-model="vm.video" name="video" accept="video/*" required ngf-model-invalid="errorFile" ngf-change="vm.enviarVideo()">
+						<video width="400" ng-show="vm.registro.video_id && !vm.video" flex-xs="100" flex-gt-xs="100" style="padding-top: 5px;" controls src="{{vm.registro.video}}">
+						</video>
+						<div></div>
+						<md-button class="md-raised md-primary" aria-label="Remove" ng-click="vm.removerVideo()" ng-show="vm.registro.thumb_id">
+							Remover vídeo
+						</md-button>
+					</md-input-container>
+				</div>
+				<md-tabs class="md-primary" md-dynamic-height md-selected="vm.selectedTab">
+					<md-tab ng-repeat="item in vm.languages" label="{{item.locale}}">
+						<div layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Título</label>
+								<input ng-model="vm.registro.languages[item.locale].title" type="text">
+							</md-input-container>
+						</div>
+						<div layout="row" layout-wrap>
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+								<label>Descrição</label>
+								<textarea ng-model="vm.registro.languages[item.locale].text_description" md-maxlength="400" rows="5" md-select-on-focus></textarea>
+							</md-input-container>
+						</div>
+					</md-tab>
+				</md-tabs>
+			</md-list>
+			<md-toolbar>
+				<div class="md-toolbar-tools" style="background: #FCFCFC; border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+					<div layout="row">
+						<md-button class="md-raised" aria-label="Cancelar" ui-sref="painel.produtos-site.listar">
+							Cancelar
+						</md-button>
+						<md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.salvar()">
+							Salvar
+						</md-button>
+					</div>
+				</div>
+			</md-toolbar>
+
+			<md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+				<md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+			</md-content>
+		</md-content>
+	</form>

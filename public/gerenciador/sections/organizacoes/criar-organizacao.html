@@ -1,0 +1,41 @@
+<md-content class="md-whiteframe-1dp content-editar-usuario">
+    <!--
+        TAB CONTA
+    -->
+    <md-tabs class="md-primary" md-dynamic-height>
+        <md-tab label="Organização">
+            <md-content class="md-padding">
+                <form>
+
+                    <div class="progress-content" layout="row" layout-align="center center" ng-show="vm.loadingOrganizacao">
+                        <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+                    </div>
+
+                    <div layout=row layout-wrap ng-if="!vm.loadingOrganizacao">
+
+                        <div flex=100 flex-gt-sm=66>
+                            <div layout="row" layout-wrap>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Nome</label>
+                                    <input ng-model="vm.organizacao.nome" type="text">
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </md-content>
+            <md-toolbar>
+                <div class="md-toolbar-tools" style="background: #FCFCFC;border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+                    <div layout="row">
+                        <md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.salvar()">
+                            Salvar
+                        </md-button>
+                    </div>
+                </div>
+            </md-toolbar>
+            <md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+                <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+</md-content>

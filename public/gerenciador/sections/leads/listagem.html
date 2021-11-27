@@ -1,0 +1,45 @@
+<div layout="row" layout-xs="column" class="download-lead_container">
+    <div flex>
+        <md-button class="md-raised btn-download" ng-click="vm.donwloadLead()">Download Leads (xls)</md-button>
+    </div>
+</div>
+
+<md-toolbar class="md-table-toolbar md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <span>Leads</span>
+    </div>
+</md-toolbar>
+
+
+<md-table-container class="md-whiteframe-1dp table-primary">
+    <table md-table ng-model="vm.selected" md-progress="vm.promise">
+        <thead md-head md-order="vm.query.sort" md-on-reorder="vm.carregarLeads">
+            <tr md-row>
+                <th md-column md-order-by="nome"><span>Empresa</span></th>
+                <th md-column md-order-by="email"><span>Contato</span></th>
+                <th md-column md-order-by="telefone"><span>Assunto</span></th>
+                <th md-column><span>E-mail</span></th>
+                <th md-column width="50"><span>Ações</span></th>
+                <!--<th md-column width="50"><span>Ações</span></th>-->
+            </tr>
+        </thead>
+        <tbody md-body>
+            <tr md-row md-select="lead" md-select-id="{{lead.id}}" md-auto-select ng-repeat="lead in vm.leads.data">
+                <td md-cell>{{lead.empresa}}</td>
+                <td md-cell>{{lead.contato}}</td>
+                <td md-cell>{{lead.assunto}}</td>
+                <td md-cell>{{lead.email}}</td>
+                <td md-cell>
+                    <div class="fl">
+                        <md-button class="md-fab md-mini md-primary" aria-label="Deletar" ng-click="vm.deletarLead($event,$index,lead.id)">
+                            <md-icon class="material-icons" aria-label="delete_forever">delete_forever</md-icon>
+                        </md-button>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</md-table-container>
+
+<md-table-pagination class="md-whiteframe-1dp table-primary" md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.leads.total}}" md-on-paginate="vm.carregarLeads" md-page-select></md-table-pagination>

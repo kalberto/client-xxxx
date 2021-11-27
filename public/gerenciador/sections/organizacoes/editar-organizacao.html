@@ -1,0 +1,150 @@
+<md-content class="md-whiteframe-1dp content-editar-usuario">
+    <!--
+        TAB CONTA
+    -->
+    <md-tabs class="md-primary" md-dynamic-height>
+        <md-tab label="Organização">
+            <md-content class="md-padding">
+                <form>
+
+                    <div class="progress-content" layout="row" layout-align="center center" ng-show="vm.loadingOrganizacao">
+                        <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+                    </div>
+
+                    <div layout=row layout-wrap ng-if="!vm.loadingOrganizacao">
+
+                        <div flex=100 flex-gt-sm=66>
+                            <div layout="row" layout-wrap>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Nome</label>
+                                    <input ng-model="vm.organizacao.nome" type="text">
+                                </md-input-container>
+                            </div>
+                            <!-- PERMISSOES -->
+                            Empresas
+                            <br/><br/>
+                            <div class="expansion-panel">
+                                <div class="expansion-panel-collapsed">
+                                    <div class="expansion-panel-title">Documento</div>
+                                    <div class="expansion-panel-summary">Razão Social</div>
+                                </div>
+                            </div>
+                            <div class="progress-content" layout="row" layout-align="center center" ng-show="vm.loadingEmpresas">
+                                <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+                            </div>
+                            <md-expansion-panel-group multiple ng-if="!vm.loadingEmpresas">
+                                <md-expansion-panel ng-repeat="item in vm.organizacao.empresas" md-component-id="{{item.DOCUMENTO}}">
+                                    <md-expansion-panel-collapsed ng-click="vm.showEmpresa($index)">
+                                        <div class="md-title">{{vm.getDocumento(item.DOCUMENTO)}}</div>
+                                        <div class="md-summary">{{item.NOME}}</div>
+                                        <md-expansion-panel-icon></md-expansion-panel-icon>
+                                    </md-expansion-panel-collapsed>
+                                    <md-expansion-panel-expanded >
+                                        <md-expansion-panel-header ng-click="vm.closeExpansion(item.DOCUMENTO)">
+                                            <div class="md-title">{{vm.getDocumento(item.DOCUMENTO)}}</div>
+                                            <div class="md-summary">{{item.NOME}}</div>
+                                            <md-expansion-panel-icon></md-expansion-panel-icon>
+                                        </md-expansion-panel-header>
+                                        <!-- INDICADOR DE CARREGAMENTO -->
+                                        <div class="progress-content" layout="row" layout-align="center center" ng-show="!item.servicos">
+                                            <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+                                        </div>
+                                        <md-expansion-panel-content ng-show="item.servicos">
+                                            <table md-table>
+                                                <thead md-head>
+                                                <tr md-row>
+                                                    <th md-column><span>SVCID</span></th>
+                                                    <th md-column><span>Endereço</span></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody md-body>
+                                                <tr md-row ng-repeat="servico in item.servicos">
+                                                    <td md-cell>{{servico.SVCID}}</td>
+                                                    <td md-cell>{{servico.endereco}}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </md-expansion-panel-content>
+                                        <md-expansion-panel-footer>
+                                            <div flex></div>
+                                            <md-button class="md-warn" ng-click="vm.removerEmpresa(item.DOCUMENTO)">Remover</md-button>
+                                        </md-expansion-panel-footer>
+                                    </md-expansion-panel-expanded>
+                                </md-expansion-panel>
+                            </md-expansion-panel-group>
+                            <div class="expansion-panel">
+                                <div class="expansion-panel-collapsed">
+                                    <div flex></div>
+                                    <md-button class="md-warn" ng-click="vm.loadDocumentos()">Atualizar</md-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </md-content>
+            <md-toolbar>
+                <div class="md-toolbar-tools" style="background: #FCFCFC;border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+                    <div layout="row">
+                        <md-button class="md-raised" aria-label="Excluir" ng-click="vm.deletar($event)" ng-if="vm.organizacao.id">
+                            Excluir
+                        </md-button>
+                        <md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.salvar()">
+                            Salvar
+                        </md-button>
+                    </div>
+                </div>
+            </md-toolbar>
+            <md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+                <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+            </md-content>
+        </md-tab>
+
+        <!--
+            TAB NOVAS EMPRESAS
+        -->
+        <md-tab label="Empresas">
+            <div flex layout="row" layout-padding layout-wrap>
+
+                <div flex layout="column">
+                    <div layout="row" layout-align="center">
+                        <md-input-container flex>
+                            <input placeholder="Buscar" ng-model="vm.search" ng-keypress="vm.isEnter($event)">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div flex="10" layout="column">
+                    <md-button class="md-raised md-primary" aria-label="buscar" ng-click="vm.buscarEmpresas()">
+                        Buscar
+                    </md-button>
+                </div>
+            </div>
+            <md-content class="md-padding">
+                <md-table-container class="md-whiteframe-1dp table-primary">
+                    <table md-table ng-model="vm.selected" md-progress="vm.promise">
+                        <thead md-head md-order="vm.query.order" md-on-reorder="vm.carregarEmpresas">
+                        <tr md-row>
+                            <th md-column><span>Nome</span></th>
+                            <th md-column><span>Documento</span></th>
+                            <th md-column width="50"><span>Ações</span></th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row md-select="empresa" md-select-id="{{empresa.DOCUMENTO}}" md-auto-select ng-repeat="empresa in vm.empresas">
+                            <td md-cell>{{empresa.NOME}}</td>
+                            <td md-cell>{{vm.getDocumento(empresa.DOCUMENTO)}}</td>
+                            <td md-cell>
+                                <div class="fl">
+                                    <md-button class="md-fab md-mini md-primary" aria-label="Editar" ng-click="vm.adicionarEmpresa(empresa.DOCUMENTO)">
+                                        <md-icon class="material-icons" aria-label="add">add</md-icon>
+                                    </md-button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <md-table-pagination class="md-whiteframe-1dp table-primary" md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.empresasTotal}}" md-on-paginate="vm.carregarEmpresas" md-page-select></md-table-pagination>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+</md-content>

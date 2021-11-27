@@ -1,0 +1,51 @@
+// Area cliente Auth
+
+article#areaClienteAuth
+    display flex; align-items center; padding 25px 0; justify-content center;
+    .forms
+        padding 0 75px; border-right 1px solid $laranja
+        form
+            min-width 300px; max-width 450px; padding 20px 0; margin 0 auto
+            .texto
+                h2
+                    font-size rem(18); line-height rem(24); font-weight $font-bold; color $branco;
+                    padding 10px 0;
+                p, a
+                    font-size rem(16); line-height rem(24); color $branco; padding 10px 0; font-weight $font-light;
+                a
+                    font-weight $font-bold
+            .input
+                position relative; padding 10px 0;
+                .erro
+                    position absolute; bottom 0; color #b00; background $preto; right 5px; padding 2px 5px;
+                    font-size rem(14); line-height 1em; max-width calc(100% - 10px); text-overflow ellipsis;
+                    white-space nowrap; overflow hidden;
+                label
+                    font-size rem(18); line-height 1em; color $branco; position absolute; left 10px; top 50%; 
+                    transform translateY(-50%); padding 5px 10px; transition all .3s ease; border-radius 4px
+                    background $preto;
+                input
+                    border-radius 5px; border 2px solid $branco; background none; color $branco; width 100%;
+                    font-size rem(18); line-height 1em; padding 15px 20px;
+                    &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active
+                        box-shadow 0 0 0 30px $preto inset !important; -webkit-text-fill-color $branco !important;
+                input:focus + label, label.ativo
+                    top 10px; left 5px; 
+            .button
+                button
+                    background $laranja; border-radius 5px; padding 15px; font-size rem(18); line-height 1em; color $branco;
+                    font-weight $font-bold; text-transform uppercase; text-align center; width 100%; cursor pointer;
+                    &:disabled
+                        background rgba($laranja, .6); cursor default
+
+    .bg
+        padding 0 75px;
+
++tablet-1024()
+    article#areaClienteAuth
+        .forms
+            width 100%; border-right none; padding 0 25px
+            form
+                width 100%; min-width 0; padding 0
+        .bg
+            display none

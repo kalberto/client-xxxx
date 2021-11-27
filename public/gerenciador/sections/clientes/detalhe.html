@@ -1,0 +1,41 @@
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>{{vm.cliente.NOME}}</span>
+                </h2>
+            </div>
+        </md-toolbar>
+
+        <md-content class="md-padding md-whiteframe-1dp">
+            <md-list ng-cloak="">
+                <div layout=row layout-wrap>
+                    <div class="md-block dash-item" flex-xs="100" flex-gt-xs="100">
+                        <p class="title">Fantasia</p>
+                        <p class="number">{{vm.cliente.FANTASIA}}</p>
+                    </div>
+                    <div class="md-block dash-item" flex-xs="100" flex-gt-xs="50">
+                        <p class="title">ID</p>
+                        <p class="number">{{vm.cliente.ID}}</p>
+                    </div>
+                    <div class="md-block dash-item" flex-xs="100" flex-gt-xs="50">
+                        <p class="title">DOCUMENTO</p>
+                        <p class="number">{{vm.cliente.DOCUMENTO}}</p>
+                    </div>
+                    <div class="md-block dash-item" flex-xs="100" flex-gt-xs="50">
+                        <p class="title">RG Inscrição</p>
+                        <p class="number">{{vm.cliente.RG_INSCRICAO}}</p>
+                    </div>
+                    <div class="md-block dash-item" flex-xs="100" flex-gt-xs="50">
+                        <p class="title">Inscrição municipal</p>
+                        <p class="number">{{vm.cliente.INSCRICAO_MUNICIPAL}}</p>
+                    </div>
+                    <div class="md-block dash-item" flex-xs="100" flex-gt-xs="100">
+                        <p class="title">E-mail(s)</p>
+                        <p class="number">{{vm.cliente.EMAIL}}</p>
+                    </div>
+                </div>
+            </md-list>
+            <md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+                <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+            </md-content>
+        </md-content>

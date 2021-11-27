@@ -1,0 +1,45 @@
+<div layout="row" layout-xs="column" class="download-seja-parceiro_container">
+    <div flex>
+        <md-button class="md-raised btn-download" ng-click="vm.donwloadSejaParceiro()">Download registros (xls)</md-button>
+    </div>
+</div>
+
+<md-toolbar class="md-table-toolbar md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <span>Sjea um parceiro</span>
+    </div>
+</md-toolbar>
+
+
+<md-table-container class="md-whiteframe-1dp table-primary">
+    <table md-table ng-model="vm.selected" md-progress="vm.promise">
+        <thead md-head md-order="vm.query.sort" md-on-reorder="vm.carregarRegistros">
+            <tr md-row>
+                <th md-column md-order-by="documento"><span>Documento</span></th>
+                <th md-column><span>Nome</span></th>
+                <th md-column><span>Razão Social</span></th>
+                <th md-column><span>E-mail</span></th>
+                <th md-column width="50"><span>Ações</span></th>
+                <!--<th md-column width="50"><span>Ações</span></th>-->
+            </tr>
+        </thead>
+        <tbody md-body>
+            <tr md-row md-select="registro" md-select-id="{{registro.id}}" md-auto-select ng-repeat="registro in vm.registros.data">
+                <td md-cell>{{registro.documento}}</td>
+                <td md-cell>{{registro.data.nome}}</td>
+                <td md-cell>{{registro.data.razao_social}}</td>
+                <td md-cell>{{registro.data.email}}</td>
+                <td md-cell>
+                    <div class="fl">
+                        <md-button class="md-fab md-mini md-primary" aria-label="Deletar" ng-click="vm.deletarRegistro($event,$index,registro.id)">
+                            <md-icon class="material-icons" aria-label="delete_forever">delete_forever</md-icon>
+                        </md-button>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</md-table-container>
+
+<md-table-pagination class="md-whiteframe-1dp table-primary" md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.registros.total}}" md-on-paginate="vm.carregarLeads" md-page-select></md-table-pagination>

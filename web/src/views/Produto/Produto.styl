@@ -1,0 +1,162 @@
+// Produto
+
+@keyframes scrollAnim 
+    100%
+        transform translateY(10%)
+
+article#produto
+    display flex; justify-content space-between; color $branco; padding-top rem(50); align-items center;
+    h1
+        font-size rem(118); line-height rem(272); letter-spacing letterSpacing(350); font-weight $font-light;
+        text-transform uppercase; color rgba($branco, .0125); user-select none; pointer-events none;
+        position fixed; left 5px; top 10%;
+
+    section
+        height 100%; display flex; flex-direction column; align-items center
+        svg
+            fill #fff; max-width 35px; display block; padding rem(10) 0 0; width 100%;
+            .scroll
+                animation scrollAnim .75s ease-in alternate infinite
+        h2
+            color $laranja; font-size rem(30); line-height rem(28); letter-spacing letterSpacing(150);
+            text-transform uppercase; font-weight $font-bold
+        h3
+            font-size rem(18); line-height rem(24); letter-spacing 0; text-transform uppercase; font-weight $font-regular
+            padding rem(15) 0; position relative
+            &:after
+                content ''; display block; left rem(5); bottom 0; width 75%; height 2px; background $laranja2; position absolute;
+        p
+            font-size rem(18); line-height rem(34); letter-spacing letterSpacing(100); padding rem(15) 0 rem(5)
+            + p
+                font-size rem(16); line-height rem(24); letter-spacing 0
+        >>> ul
+            font-size rem(16); line-height rem(24);
+            li
+                padding-top rem(15);
+    
+    #sobre
+        flex-basis rem(480); padding 0 rem(50) rem(50); position relative; justify-content space-between
+        .conteudo
+            padding-top rem(75)
+        &:after
+            content ''; position absolute; top 0; right 0; width 3px; background $branco; height 75%
+
+    #vantagens
+        flex-basis rem(640); padding 0 rem(65) rem(50) rem(75);
+        h2
+            font-size rem(18); line-height rem(24); letter-spacing 0; font-weight $font-regular
+        >>> ul
+            list-style disc; padding 0 rem(5) 0 rem(20)
+    
+    #diferencial
+        flex-basis rem(640); align-items center; justify-content space-between
+        p
+            max-width rem(500); padding 0 rem(10); font-size rem(34); line-height rem(52); text-transform uppercase;
+            text-align center
+            >>> strong
+                color $laranja !important; font-weight $font-bold;
+            
+            &:after
+                content ''; background $laranja; height rem(70); width 2px; display block; margin rem(10) auto
+        button
+            font-size 18px; color #fff; line-height 72px; padding-left 15px; position relative;
+            cursor pointer; outline 0
+            img
+                display inline-block; margin-right 10px; max-height none
+            &:before
+                content ''; width calc(100% - 15px); left 15px; bottom 15px; position absolute; background #fff; opacity 0.8; height 2px; transform-origin left center;
+                transform: scaleX(0); transition all 0.8s ease;
+            &:hover
+                &:before
+                    transform: scaleX(1)
+
+        .produtos
+            display flex; max-width rem(640); width 100%;
+            li
+                flex-grow 1; cursor pointer; text-align center; transition all .3s ease
+                a
+                    color $branco; font-size rem(16); line-height rem(24); text-transform uppercase;
+                    text-decoration none; 
+                    span
+                        padding rem(10) 0; display block
+                picture
+                    height rem(180); overflow hidden; display block; position relative;
+
+                    &:after
+                        content ''; position absolute; top 0; left 0; width 100%; height 100%; background $preto; opacity .8;
+                        transition all .3s ease;
+                    img
+                        width auto; width 100%; position absolute; top 50%; left 50%; transform translate(-50%, -50%); max-height none
+                        max-width none; min-height 100%
+                &:hover
+                    background rgba(darken($preto, 20%), .15)
+                    picture
+                        &:after
+                            opacity 0;
+
++desktop-1440()
+    article#produto
+        #sobre
+            >>> .BtnSolicite
+                margin: 20px 0;
+                .btn
+                    font-size rem(14); line-height 8px
+
+
++desktop-1366()
+    article#produto
+        padding 0
+        #sobre
+            justify-content: flex-start;
+            .conteudo
+                padding 0
+                h3
+                    font-size rem(16)
+                p
+                    font-size rem(14)
+            >>> .BtnSolicite
+                margin: 20px 0;
+                .btn
+                    line-height 8px
+        #diferencial
+            p
+                font-size rem(25);
+
++desktop-1024()
+    article#produto
+        display flex; flex-direction column; overflow-y scroll; overflow-x hidden;
+        #sobre, #diferencial, #vantagens
+            padding 0 80px;
+        #sobre, #vantagens
+            margin-bottom 40px;
+        #vantagens
+            h2
+                margin: 0 auto 0 0;
+
++tablet-1024()
+    article#produto
+        display flex; flex-flow row wrap; overflow-y scroll; overflow-x hidden; padding-top 80px;
+        justify-content center;
+        section
+            height auto
+        #sobre, #diferencial, #vantagens
+            padding 0 80px; flex-basis auto; width 100%;
+        #sobre, #vantagens
+            margin-bottom 40px;
+        #vantagens
+            h2
+                margin: 0 auto 0 0;
+
++mobile-600()
+    article#produto
+        padding 0
+        #sobre, #vantagens
+            padding 0 20px;
+        #diferencial
+            padding 0
+            p
+                padding 0 20px
+            .produtos
+                display flex; flex-direction column;
+                li
+                    width 100%; 

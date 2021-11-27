@@ -1,0 +1,32 @@
+{
+    "dev": {
+        "baseUrl": "http://127.0.0.1:7080/gerenciador/",
+    	"EnvironmentConfig": {
+    		"api": "http://127.0.0.1:7080/api/v1/"
+    	}
+    },
+    "build": {
+        "baseUrl": "https://stage.xxxx.com/gerenciador/",
+        "EnvironmentConfig": {
+    		"api": "https://stage.xxxx.com/api/v1/"
+    	}
+    },
+    "production": {
+        "baseUrl": "https://www.xxxx.com/gerenciador/",
+        "EnvironmentConfig": {
+            "api": "https://www.xxxx.com/api/v1/"
+        }
+    },
+    "staging": {
+      "baseUrl": "https://stage.xxxx.com/gerenciador/",
+      "EnvironmentConfig": {
+        "api": "https://stage.xxxx.com/api/v1/"
+      }
+    },
+    "dev-etools": {
+      "baseUrl": "https://xxxx/gerenciador/",
+      "EnvironmentConfig": {
+        "api": "https://xxxx/api/v1/"
+      }
+    }
+}

@@ -1,0 +1,108 @@
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Configurações</span>
+                </h2>
+            </div>
+        </md-toolbar>
+
+        <md-content class="md-padding md-whiteframe-1dp">
+            <md-list ng-cloak="">
+                <form>
+                    
+                    <!-- GERAL -->
+                    <md-subheader class="md-no-sticky">Geral</md-subheader>
+                    <md-list-item>
+                        <div flex=100 flex-gt-sm=100>
+                        
+							<div layout=row layout-wrap>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
+                                    <label>Nome projeto</label>
+                                    <input ng-model="vm.configuracao.nome_app" type="text">
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Sufixo de SEO</label>
+                                    <input ng-model="vm.configuracao.seo_sufix" type="text">
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Google Tag Manager ID</label>
+                                    <input ng-model="vm.configuracao.tag_manager_id" type="text">
+                                </md-input-container>
+                            </div>
+                      
+                        </div>
+                    </md-list-item>
+                    <!-- GERAL END -->
+
+
+                    <!-- CONTATOS -->
+                    <md-subheader class="md-no-sticky">Contatos</md-subheader>
+                    <md-list-item>
+                        <div flex=100 flex-gt-sm=100>
+                        
+							<div layout=row layout-wrap>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>E-mail remetente</label>
+                                    <input ng-model="vm.configuracao.email_remetente" type="text">
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>E-mail Destinatário</label>
+                                    <input ng-model="vm.configuracao.email_destinatario" type="text">
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Telefone</label>
+                                    <input ng-model="vm.configuracao.telefone" type="text" ui-br-phone-number-mask>
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Whatsapp</label>
+                                    <input ng-model="vm.configuracao.whatsapp" type="text" ui-br-phone-number-mask>
+                                </md-input-container>
+                            </div>
+                      
+                        </div>
+                    </md-list-item>
+                    <!-- CONTATOS END -->
+
+
+                   	<!-- REDES SOCIAIS -->
+                    <md-subheader class="md-no-sticky">Redes Sociais</md-subheader>
+                    <md-list-item>
+                        <div flex=100 flex-gt-sm=100>
+                        
+							<div layout=row layout-wrap>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Facebook</label>
+                                    <input ng-model="vm.configuracao.social_facebook" type="text">
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Instagram</label>
+                                    <input ng-model="vm.configuracao.social_instagram" type="text">
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
+                                    <label>Twitter</label>
+                                    <input ng-model="vm.configuracao.social_twitter" type="text">
+                                </md-input-container>
+                            </div>
+                      
+                        </div>
+                    </md-list-item>
+                    <!-- REDES SOCIAIS END -->
+
+                </form>
+            </md-list>
+                        
+                    
+            <md-toolbar>
+            <div class="md-toolbar-tools" style="background: #FCFCFC; border-top: 1px solid #ECECEC;"  layout="row" layout-align="center center">
+                <div layout="row">
+                    <md-button class="md-raised md-primary" aria-label="Salvar" ng-click="vm.salvar()">
+                        Salvar
+                    </md-button>
+                </div>
+            </div>
+            </md-toolbar>
+
+            <md-content class="progress-absolute" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+                <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+            </md-content>
+        </md-content>

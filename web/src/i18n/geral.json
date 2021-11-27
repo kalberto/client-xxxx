@@ -1,0 +1,24 @@
+{
+    "pt-br": {
+        "botoes": {
+            "assista-video": "Assista aos vídeos",
+            "solicite": "Solicite agora",
+            "saiba-mais": "Saiba Mais",
+            "documentos-legais": "Documentos<br>Legais"
+        },
+        "textos": {
+            "institucional": "Institucional"
+        }
+    },
+    "en-gb": {
+        "botoes": {
+            "assista-video": "Watch the videos",
+            "solicite": "Request now",
+            "saiba-mais": "Read More",
+            "documentos-legais": "Legal<br>Documents"
+        },
+        "textos": {
+            "institucional": "Institutional"
+        }
+    }
+}

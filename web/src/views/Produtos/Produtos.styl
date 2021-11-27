@@ -1,0 +1,214 @@
+// Categoria
+
+@keyframes tituloAnim 
+    0%, 9%, 91%, 100%
+        opacity 0;
+    10%
+        top 105%; opacity 1
+    90%
+        top -100%; opacity 1
+
+@keyframes parallax1
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(calc(100% - 165px))
+
+@keyframes parallax2
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(calc(-100% + 165px))
+
+article#produtos
+    display grid; grid-template-columns 4fr 1fr 1fr 1fr 1fr; grid-template-rows repeat(2, 1fr);
+    grid-template-areas "banner prod1 prod2 prod3 prod4" "banner prod1 prod2 prod3 prod4";
+    background-image url("~@images/logos/xxxx_marcaDagua.png"); background-position calc(100% - 115px) 25px;
+    background-repeat no-repeat; background-size 150px auto
+
+    section
+        position relative;
+
+    .banner
+        grid-area banner; display grid; grid-template-columns repeat(2, 1fr); grid-template-rows repeat(2, 1fr);
+        grid-template-areas "figure figure" "descricao anim";
+        
+        figure
+            position relative; grid-area figure;
+            picture
+                display block; position relative; width 100%; opacity .5;
+                img
+                    min-width 100%; filter grayscale(1);
+                &:after
+                    content ''; width 100%; height 100%; position absolute; bottom 0; left 0; 
+                    background linear-gradient(15deg, rgba(#000, .8), transparent 45%)
+            
+            figcaption
+                position absolute; height 100%; display flex; flex-direction column; justify-content flex-end; 
+                padding 1.5em 1.25em; color $branco; width 100%; top 0; left 0; transition all 1s ease-in-out
+
+                &:after
+                    content ''; height 2px; background $laranja2; display block; width 30%; margin-top rem(10); transition all 0.8s ease-in-out 0.8s
+
+                h3
+                    font-size rem(30); letter-spacing letterSpacing(150); line-height rem(30); text-transform uppercase;
+                    font-weight $font-bold; margin rem(5) 0; transition all 0.8s ease-in-out
+
+                .subtitulo
+                    font-size rem(18); line-height rem(24); overflow hidden; transition all 0.3s ease-in-out
+
+                span
+                    font-size rem(14); line-height rem(24); 
+
+                a
+                    display block; width 181px; margin 0 0 7px auto; color $laranja; text-transform uppercase; color #ca462f; max-height 0px;
+                    overflow: hidden; font-weight $font-bold; text-decoration none; letter-spacing letterSpacing(150)
+
+        .descricao
+            grid-area descricao; display flex; align-items center; padding rem(25) 0
+
+            .conteudo
+                border-left 2px solid $laranja
+            p
+                font-size rem(14); line-height rem(22); color $branco; padding rem(5) rem(20);
+                + p
+                    margin-top rem(10);
+
+        .anim
+            mask-image radial-gradient(circle, rgba(#000, 1) 0%, rgba(#000, 0) 85%); overflow hidden; user-select none; pointer-events none;
+            position relative
+            h2
+                writing-mode vertical-lr; text-orientation upright; text-transform uppercase;
+                color rgba($branco, .15); font-weight $font-light; font-size rem(26); line-height rem(60); 
+                letter-spacing letterSpacing(350); position absolute; left 50%; transform translateX(-50%);
+                white-space nowrap; animation tituloAnim 15s linear infinite; top 105%
+        
+    .assista
+        grid-area assista; display flex; align-items center; justify-content center
+        button
+            font-size 18px; color #fff; line-height 72px; padding-left 15px; position relative; cursor pointer; outline 0
+            img
+                display inline-block; margin-right 10px
+            &:before
+                content ''; width calc(100% - 15px); left 15px; top 55px; position absolute; background #fff; opacity 0.8; 
+                height 2px; transform-origin left center; transform: scaleX(0); transition all 0.8s ease; 
+            &:after
+                content ''; display block; width 2px; height 75px; background $laranja; margin 0 auto
+            &:hover
+                &:before
+                    transform: scaleX(1)
+
+    .produto
+        display flex;
+        figure
+            position relative; cursor pointer; max-height rem(450); max-width rem(200); overflow hidden
+            picture
+                display block; position relative; height 100%;
+                img
+                    max-width none; left 50%; transform translateX(-50%); position relative;
+                &:after
+                    content ''; width 100%; height 100%; position absolute; bottom 0; left 0; 
+                    background #000; opacity .45; transition all .3s ease
+            figcaption
+                position absolute; color $branco; bottom rem(20); display block; text-align center; text-transform uppercase;
+                font-size rem(16); line-height rem(24); width 100%
+            &:hover
+                picture
+                    &:after
+                        opacity .7
+        &._1
+            grid-area prod1; align-items flex-end;
+            a
+                animation parallax2 40s linear infinite alternate;
+        &._2
+            grid-area prod2; align-items flex-start;
+            a
+                animation parallax1 40s linear infinite alternate;
+        &._3
+            grid-area prod3; align-items flex-end;
+            a
+                animation parallax2 40s linear infinite alternate;
+        &._4
+            grid-area prod4; align-items flex-start
+            a
+                animation parallax1 40s linear infinite alternate;
+
++desktop-1440()
+    article#produtos
+        .banner
+            grid-template-areas "figure figure" "descricao descricao";
+        .produto
+            figure
+                max-height rem(300)
+        figure
+            picture
+                display block; position relative; height 300px; opacity .5;
+                img
+                    height 100%
+
++desktop-1366()
+    article#produtos
+        .banner
+            grid-template-areas "figure figure" "descricao descricao";
+        .produto
+            figure
+                max-height rem(300)
+        figure
+            picture
+                display block; position relative; opacity .5;
+                img
+                    height 100%
+
+
++desktop-1024()
+    article#produtos
+        display flex; flex-flow row wrap; padding 0 80px; overflow-y scroll; overflow-x hidden; justify-content space-around
+        .banner
+            width 100%; display flex; flex-direction column
+            .anim
+                display none;
+        .assista
+            order 5; width 100%; position relative;
+            button
+                &:after
+                    display none;
+        .produto
+            order 2;
+            figure
+                max-height none; max-width 100%
+            &._1, &._2, &._3
+                padding 0
+
++tablet-1024()
+    article#produtos
+        display flex; flex-flow row wrap; padding 0 80px; overflow-y scroll; overflow-x hidden; justify-content space-around
+        .banner
+            width 100%; display flex; flex-direction column
+            .anim
+                display none;
+        .assista
+            order 5; width 100%; position relative; 
+            &:before
+                content ''; position absolute; bottom 0; left 50%; transform translateX(-50%); background $laranja;
+                width 200%; height 3px
+            button
+                padding 0
+                &:after
+                    display none;
+        .produto
+            order 2; width 100%; margin-bottom 30px; height 200px; overflow hidden; 
+            a
+                width 100%;
+                figure
+                    max-height none; max-width 100%
+                    picture
+                        img
+                            width 100%; max-width none; max-height none; 
+            &._1, &._2, &._3
+                padding 0
+            &._2
+                align-items flex-end
+
++mobile-600()
+    article#produtos
+        padding 0 20px;

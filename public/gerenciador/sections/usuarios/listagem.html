@@ -1,0 +1,59 @@
+<!-- BOTÃO PARA ADICIONAR USUÁRIO -->
+<md-button ng-click="vm.cadastrarUsuario()" class="md-fab md-accent" aria-label="Adicionar usuário" style="position: fixed; right: 30px; bottom: 30px;">
+    <md-icon class="material-icons" aria-label="add">add</md-icon>
+</md-button>
+
+<md-content class="md-whiteframe-1dp" style="">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Usuários</span>
+            </h2>
+        </div>
+    </md-toolbar>
+
+    <div flex layout="row" layout-padding layout-wrap>
+
+        <div flex layout="column">
+
+            <div layout="row" layout-align="center">
+                <md-input-container flex>
+                    <input placeholder="Nome ou e-mail" ng-model="vm.search">
+                </md-input-container>
+            </div>
+        </div>
+    </div>
+</md-content>
+
+<!-- BARRA COM QUANTIDADE DE RESULTADOS ENCONTRADOS E ORDENAÇÃO -->
+<div class="barra-resultados" layout-padding layout="row" ng-show="vm.usuarios.length > 0">
+    <div class="quantidade-itens" layout="row" layout-align="center center">{{vm.usuarios.length}} usuários</div>
+</div>
+
+<!-- LISTA DE USUARIOS -->
+<div layout="row" layout-wrap ng-hide="vm.usuarios.length === 0">
+
+    <div flex flex-xs="100" flex-sm="50" flex-md="50" flex-lg="25" flex-xl="20" layout="column" ng-repeat="usuario in vm.usuarios | filter:vm.search">
+        <md-card>
+            <md-card-content class="content-card-usuarios">
+                <div layout="row">
+                    <img class="face" src="assets/img/default_user.png" alt="" ng-if="usuario.media_id == null || usuario.media == null">
+                    <img class="face" src="../{{usuario.media.media_root.path}}{{usuario.media.nome}}" alt="Foto do usuário" ng-if="usuario.media_id != null && usuario.media != null" ng-cloak>
+                </div>
+                <div layout="column" layout-align="center center">
+                    <p class="md-body-1">{{usuario.nome}} {{usuario.sobrenome}}</p>
+                </div>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="center">
+                <md-button ui-sref="painel.usuarios.salvar({slug:vm.slug,id: usuario.id})" class="md-raised md-warn md-hue-2" style="margin: 0 4px">Editar</md-button>
+                <md-button ng-click="vm.acessarSite(api_token=usuario.api_token)" class="md-raised md-warn md-hue-2" style="margin: 0 4px">Login site</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+</div>
+
+<!-- INDICADOR DE CARREGAMENTO -->
+<div class="progress-content" layout="row" layout-align="center center" ng-show="vm.requestInProgress">
+    <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+</div>

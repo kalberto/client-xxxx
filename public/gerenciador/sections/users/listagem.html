@@ -1,0 +1,60 @@
+<md-toolbar class="md-table-toolbar md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <span>Usuários</span>
+    </div>
+</md-toolbar>
+
+<md-content class="md-whiteframe-1dp" style="">
+    <form ng-submit="vm.carregarUsers()">
+        <div flex layout="row" layout-padding layout-wrap>
+            <div flex layout="column">
+                <div layout="row" layout-align="center">
+                    <md-input-container flex>
+                        <input placeholder="Buscar" ng-model="vm.query.q">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </form>
+</md-content>
+
+<md-table-container class="md-whiteframe-1dp table-primary">
+    <table md-table ng-model="vm.selected" md-progress="vm.promise">
+        <thead md-head md-order="vm.query.sort" md-on-reorder="vm.carregarUsers">
+            <tr md-row>
+                <th md-column md-order-by="nome"><span>Nome</span></th>
+                <th md-column md-order-by="login"><span>Login</span></th>
+                <th md-column><span>Organização</span></th>
+                <th md-column md-order-by="email"><span>E-mail</span></th>
+                <th md-column width="50"><span>Ações</span></th>
+            </tr>
+        </thead>
+        <tbody md-body>
+            <tr md-row md-select="usuario" md-select-id="{{usuario.id}}" md-auto-select ng-repeat="usuario in vm.usuarios.data">
+                <td md-cell>{{usuario.nome}}</td>
+                <td md-cell>{{usuario.login}}</td>
+                <td md-cell>{{usuario.organizacao.nome}}</td>
+                <td md-cell>{{usuario.email}}</td>
+                <td md-cell>
+                    <div ui-sref="painel.usuarios.salvar({slug:usuario.organizacao.slug,id: usuario.id})" class="fl">
+                        <md-button class="md-fab md-mini md-primary" aria-label="Visualizar notas">
+                            <md-icon class="material-icons ng-scope" aria-label="create">create</md-icon>
+                        </md-button>
+                    </div>
+                    <div class="fl">
+                        <md-button ng-click="vm.acessarSite(api_token=usuario.api_token)" class="md-fab md-mini md-primary" aria-label="Visualizar notas">
+                            <md-icon class="material-icons ng-scope" aria-label="web">web</md-icon>
+                        </md-button>
+                    </div>
+                    <div ui-sref="painel.organizacoes.salvar({slug: usuario.organizacao.slug})" class="fl">
+                        <md-button class="md-fab md-mini md-primary" aria-label="Visualizar notas">
+                            <md-icon class="material-icons" aria-label="description">description</md-icon>
+                        </md-button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</md-table-container>
+
+<md-table-pagination class="md-whiteframe-1dp table-primary" md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.usuarios.total}}" md-on-paginate="vm.carregarUsers" md-page-select></md-table-pagination>

@@ -1,0 +1,35 @@
+<md-toolbar class="md-table-toolbar md-whiteframe-1dp">
+    <div class="md-toolbar-tools">
+        <span>Serviços</span>
+    </div>
+</md-toolbar>
+
+<md-table-container class="md-whiteframe-1dp table-primary">
+    <table md-table ng-model="vm.selected" md-progress="vm.promise">
+        <thead md-head md-order="vm.query.order" md-on-reorder="vm.carregarServicos">
+        <tr md-row>
+            <th md-column><span>Nome</span></th>
+            <th md-column><span>Ações</span></th>
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row md-select="servico" md-select-id="{{servico.url}}" md-auto-select ng-repeat="servico in vm.servicos">
+            <td md-cell>{{servico.name}}</td>
+            <td md-cell class="md-cell">
+                <div ui-sref="painel.faqs.listar({nome: servico.id,url: servico.url})" class="fl">
+                    <md-button class="md-fab md-mini md-primary" aria-label="Visualizar Faqs">
+                        <md-icon class="material-icons" aria-label="help">help</md-icon>
+                    </md-button>
+                </div>
+                <div ui-sref="painel.manuais.listar({nome: servico.id,url: servico.url})" class="fl">
+                    <md-button class="md-fab md-mini md-primary" aria-label="Visualizar Manuais">
+                        <md-icon class="material-icons" aria-label="book">book</md-icon>
+                    </md-button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+
+<md-table-pagination class="md-whiteframe-1dp table-primary" md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.servicosTotal}}" md-on-paginate="vm.carregarServicos" md-page-select></md-table-pagination>
